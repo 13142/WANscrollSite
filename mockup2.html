@@ -54,7 +54,9 @@
 
         .blue {
             background-color: blue;
-            background-image: url("clearBack.png");
+            /*background-image: url("clearBack.png");*/
+            background-image: url("back.png");
+
             background-size: cover;
             background-attachment: fixed;
         }
@@ -73,6 +75,10 @@
 
         .upper-point {
             flex: 0 1 28%;
+        }
+
+        .upper-point-longer {
+            flex: 0 1 40%;
         }
 
         .mid-point {
@@ -95,6 +101,10 @@
             position: relative;
         }
 
+        .semiHeader {
+            font-size: 70pt;
+        }
+
         .scrollDown {
             position: absolute;
             left: 50%;
@@ -111,6 +121,43 @@
         .left-align {
             text-align: left;
         }
+
+        .mid-side {
+            flex: 0 0 40%;
+        }
+
+        .content-circles {
+            flex: 1 1 auto;
+            position: relative;
+            flex-direction: row;
+        }
+
+        .contentItem {
+            border-radius: 50%;
+            background-color: red;
+            width: 30px;
+            height: 30px;
+            border-width: medium;
+            border-color: white;
+            border-style: solid;
+            margin: 20px auto;
+
+        }
+        @keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+        .contentItem:hover {
+            width: 60px;
+            height: 60px;
+            margin: 40px 0;
+        }
+        .contentSurroundPosition {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
     <section class="panel red">
         <div class="left-side">
@@ -120,7 +167,6 @@
             <div class="mid-point left-align">
                 <h1>W.A.N.</h1>
                 <h2>Wide Area Networking</h2>
-
             </div>
             <div class="bot-point">
 
@@ -137,7 +183,36 @@
         </div>
     </section>
     <section class="panel blue">
-        I am blue!
+        <div class="left-side">
+            <div class="upper-point-longer">
+
+            </div>
+            <div class="mid-point left-align">
+                <!-- <h1>Table of contents</h1> -->
+                <h2 class="semiHeader">Table of Contents: </h2>
+            </div>
+            <div class="bot-point">
+
+            </div>
+        </div>
+        <div class="mid-side">
+
+        </div>
+        <div class="right-side content-circles">
+            <div class="contentSurroundPosition">
+                <div class="contentItem"></div>
+                <div class="contentItem"></div>
+                <div class="contentItem"></div>
+                <div class="contentItem"></div>
+                <div class="contentItem"></div>
+            </div>
+        </div>
+        <div class="scrollDown" id="frontPageScrollDown">
+            <div class="above">
+                Scroll down
+            </div>
+            <i class="fa fa-chevron-down"></i>
+        </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
@@ -163,18 +238,22 @@
         }).addTo(controller);
 
         var slides = document.querySelectorAll("section.panel");
-        var scrollUpTween = TweenMax.to("#frontPageScrollDown", 1, {y:-500, opacity: -1});
-        var scrollUpTweenSecond = TweenMax.to("#frontPageScrollDown .above", 1, {y:50});
+        var scrollUpTween = TweenMax.to("#frontPageScrollDown", 1, {
+            y: -500,
+            opacity: -1
+        });
+        //var scrollUpTweenSecond = TweenMax.to("#frontPageScrollDown .above", 1, {y:50});
         for (var i = 0; i < slides.length; i++) {
             let currentScene = new ScrollMagic.Scene({
-                    triggerElement: slides[i],
-                    //duration: (200) + "%"
-                }).setPin(slides[i]);
+                triggerElement: slides[i],
+                //duration: (200) + "%"
+            }).setPin(slides[i]);
             currentScene.addIndicators().addTo(controller);
         }
         let scrollDownThing = new ScrollMagic.Scene({
             triggerElement: slides[0],
-            duration: "100%"}).setTween([scrollUpTween, scrollUpTweenSecond]).addIndicators().addTo(controller);
+            duration: "100%"
+        }).setTween([scrollUpTween, ]).addIndicators().addTo(controller);
         // var endScene = new ScrollMagic.Scene({
         //     triggerElement: "#endtrigger"
         // }).removePin();
