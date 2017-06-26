@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mockup for the WAN website</title>
+
+</head>
+
+<body>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-image: url("marbleBackground.jpg");
+            background-repeat: repeat;
+            /*color: white;*/
+            font-family: sans-serif;
+            height: 100%;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 120pt;
+        }
+        .red {
+          background-color: red;
+        }
+        .blue {
+          background-color: blue;
+        }
+        .panel {
+          color: white;
+          font-family: fantasy;
+          text-align: center;
+          font-size: 100pt;
+          width: 100%;
+          height: 100%;
+        }
+    </style>
+            <div id="trigger1"></div>
+    <div class="spacer1" style="margin-top:700px">
+
+    </div>
+
+    <div class="actual" id="pin1" style="width: 100px; height: 50px; background-color:magenta;margin: 25px auto 25px auto;"></div>
+
+    <section class="panel red">
+      Hello
+    </section>
+    <section class="panel blue">
+        I am blue!
+    </section>
+    <!-- <div style="display: flex;align-content: center;min-height: 100vh; margin-bottom:0">
+        <div style="flex:1 1 20%">
+
+        </div>
+        <div class="container" style="flex: 1 0 60%;display: flex;align-content: center; align-items: center;">
+            <div class="trigger1" style="margin-top: 40px;"></div>
+            <div class="row" style="display:block; background-color: magenta" id="pin1">
+                <h1>Hello</h1>
+                <h3>he</h3>
+                <p>stuff</p>
+            </div>
+        </div>
+        <div style="flex:0 1 20%">
+
+        </div>
+    </div> -->
+    <div style="margin-bottom: 5000px"></div>
+    <div class="end" id="endtrigger">
+      <h1>YOU WIN!</h1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js">
+    </script>
+    <script type="text/javascript">
+        var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onLeave"}});
+        var tween = TweenMax.to("#pin1", 1, {
+            rotation: 180,
+            repeat: 3,
+            ease:Linear.easeNone
+        });
+        var scene = new ScrollMagic.Scene({
+            triggerElement: "#trigger1",
+            duration: 900
+        }).setTween(tween).setPin("#pin1").addIndicators({
+            name: "1 duration 300"
+        }).addTo(controller);
+
+        var slides = document.querySelectorAll("section.panel");
+
+        for (var i = 0; i < slides.length; i++) {
+            new ScrollMagic.Scene({
+              triggerElement: slides[i],
+              //duration: (200) + "%"
+            })
+            .setPin(slides[i])
+            .addIndicators()
+            .addTo(controller);
+        }
+
+        var endScene = new ScrollMagic.Scene({
+          triggerElement: "#endtrigger"
+        }).removePin();
+    </script>
+
+</body>
+
+</html>
