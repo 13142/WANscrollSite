@@ -1,0 +1,314 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 584 526">
+  <defs>
+    <style>
+      .cls-1, .cls-27 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #e3f2fd;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #000;
+      }
+
+      .cls-2, .cls-26, .cls-27, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-28, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #ccc;
+      }
+
+      .cls-5 {
+        fill: lime;
+      }
+
+      .cls-6 {
+        fill: #4d4d4d;
+      }
+
+      .cls-7 {
+        fill: red;
+      }
+
+      .cls-8 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-9 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-10 {
+        clip-path: url(#clip-path-3);
+      }
+
+      .cls-11 {
+        clip-path: url(#clip-path-4);
+      }
+
+      .cls-12 {
+        clip-path: url(#clip-path-5);
+      }
+
+      .cls-13 {
+        clip-path: url(#clip-path-6);
+      }
+
+      .cls-14 {
+        clip-path: url(#clip-path-7);
+      }
+
+      .cls-15 {
+        clip-path: url(#clip-path-8);
+      }
+
+      .cls-16 {
+        clip-path: url(#clip-path-9);
+      }
+
+      .cls-17 {
+        clip-path: url(#clip-path-10);
+      }
+
+      .cls-18 {
+        clip-path: url(#clip-path-11);
+      }
+
+      .cls-19 {
+        clip-path: url(#clip-path-12);
+      }
+
+      .cls-20 {
+        clip-path: url(#clip-path-13);
+      }
+
+      .cls-21 {
+        clip-path: url(#clip-path-14);
+      }
+
+      .cls-22 {
+        clip-path: url(#clip-path-15);
+      }
+
+      .cls-23 {
+        clip-path: url(#clip-path-16);
+      }
+
+      .cls-24 {
+        clip-path: url(#clip-path-17);
+      }
+
+      .cls-25 {
+        clip-path: url(#clip-path-18);
+      }
+
+      .cls-26 {
+        fill-opacity: 0.66;
+      }
+
+      .cls-26, .cls-27 {
+        stroke: #29abe2;
+        stroke-width: 8px;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <polyline class="cls-1" points="0 0 5 0 5 6 0 6 0 0"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path class="cls-1" d="M2.91,2.57H2.76a1.48,1.48,0,0,0-.43.07V3.69h.59V2.57"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path class="cls-1" d="M2.91,2.47H2.32v.17a1.48,1.48,0,0,1,.43-.07h.15v-.1"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <polyline class="cls-1" points="5 0 10 0 10 6 5 6 5 0"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <polyline class="cls-1" points="7.68 2.57 7.1 2.57 7.1 3.69 7.68 3.69 7.68 2.57"/>
+    </clipPath>
+    <clipPath id="clip-path-6">
+      <polyline class="cls-1" points="7.68 2.47 7.1 2.47 7.1 2.57 7.68 2.57 7.68 2.47"/>
+    </clipPath>
+    <clipPath id="clip-path-7">
+      <polyline class="cls-1" points="9 0 15 0 15 6 9 6 9 0"/>
+    </clipPath>
+    <clipPath id="clip-path-8">
+      <polyline class="cls-1" points="12.26 2.57 11.67 2.57 11.67 3.69 12.26 3.69 12.26 2.57"/>
+    </clipPath>
+    <clipPath id="clip-path-9">
+      <polyline class="cls-1" points="12.26 2.47 11.67 2.47 11.67 2.57 12.26 2.57 12.26 2.47"/>
+    </clipPath>
+    <clipPath id="clip-path-10">
+      <polyline class="cls-1" points="14 0 19 0 19 6 14 6 14 0"/>
+    </clipPath>
+    <clipPath id="clip-path-11">
+      <polyline class="cls-1" points="16.7 2.57 16.11 2.57 16.11 3.69 16.7 3.69 16.7 2.57"/>
+    </clipPath>
+    <clipPath id="clip-path-12">
+      <polyline class="cls-1" points="16.7 2.47 16.11 2.47 16.11 2.57 16.7 2.57 16.7 2.47"/>
+    </clipPath>
+    <clipPath id="clip-path-13">
+      <polyline class="cls-1" points="18 0 24 0 24 6 18 6 18 0"/>
+    </clipPath>
+    <clipPath id="clip-path-14">
+      <polyline class="cls-1" points="21.29 2.57 20.7 2.57 20.7 3.69 21.29 3.69 21.29 2.57"/>
+    </clipPath>
+    <clipPath id="clip-path-15">
+      <polyline class="cls-1" points="21.29 2.47 20.7 2.47 20.7 2.57 21.29 2.57 21.29 2.47"/>
+    </clipPath>
+    <clipPath id="clip-path-16">
+      <polyline class="cls-1" points="23 0 28 0 28 6 23 6 23 0"/>
+    </clipPath>
+    <clipPath id="clip-path-17">
+      <polyline class="cls-1" points="25.79 2.57 25.21 2.57 25.21 3.69 25.79 3.69 25.79 2.57"/>
+    </clipPath>
+    <clipPath id="clip-path-18">
+      <polyline class="cls-1" points="25.79 2.47 25.21 2.47 25.21 2.57 25.79 2.57 25.79 2.47"/>
+    </clipPath>
+    <symbol id="Computer" data-name="Computer" viewBox="0 0 44.75 35.34">
+      <rect class="cls-2" x="0.69" y="0.5" width="39.89" height="23.86" rx="5" ry="5"/>
+      <polygon class="cls-3" points="20.64 31.13 15.22 24.36 26.05 24.36 20.64 31.13"/>
+      <polygon class="cls-3" points="39.52 34.84 2.34 34.84 0.66 29.03 38.03 29.03 39.52 34.84"/>
+      <path class="cls-3" d="M43.62,34.34H42.44a1.62,1.62,0,0,1-1.34-1.2l-.73-2.53c-.15-.54.11-1,.59-1h1a1.49,1.49,0,0,1,1.22,1l.95,2.53C44.4,33.8,44.16,34.34,43.62,34.34Z"/>
+    </symbol>
+    <image id="image" width="3" height="4" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAIAAADtz9qMAAAA"/>
+    <image id="image-2" width="3" height="3" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIA"/>
+    <image id="image-3" width="4" height="4" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAIAAAACDbGyAAAACXBIWXMAABYlAAAW"/>
+    <image id="image-4" width="4" height="3" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAECAIAAADJUWIXAAAA"/>
+    <symbol id="Server" data-name="Server" viewBox="0 0 29.4 26.43">
+      <path class="cls-4" d="M28.9,4.07V23.93a2,2,0,0,1-2,2H2.76a2,2,0,0,1-2-2V4.07a2,2,0,0,1,2-2H26.9a2,2,0,0,1,2,2"/>
+      <path d="M28.9,4.07h-.5V23.93a1.51,1.51,0,0,1-1.5,1.5H2.76a1.51,1.51,0,0,1-1.5-1.5V4.07a1.51,1.51,0,0,1,1.5-1.5H26.9a1.51,1.51,0,0,1,1.5,1.5h1a2.51,2.51,0,0,0-2.5-2.5H2.76a2.51,2.51,0,0,0-2.5,2.5V23.93a2.51,2.51,0,0,0,2.5,2.5H26.9a2.51,2.51,0,0,0,2.5-2.5V4.07h-.5"/>
+      <polyline class="cls-5" points="9.19 18.32 9.19 9.95 7.19 9.95 7.19 18.32"/>
+      <polyline class="cls-5" points="4.87 18.32 4.87 9.95 2.87 9.95 2.87 18.32"/>
+      <polyline points="11.17 25.93 11.17 2.07 10.17 2.07 10.17 25.93 11.17 25.93"/>
+      <polyline class="cls-6" points="13.62 18.46 13.62 10.08 11.62 10.08 11.62 18.46"/>
+      <polyline points="15.6 26.06 15.6 2.21 14.6 2.21 14.6 26.06"/>
+      <polyline class="cls-6" points="18.27 18.46 18.27 10.08 16.27 10.08 16.27 18.46"/>
+      <polyline points="20.26 26.06 20.26 2.21 19.26 2.21 19.26 26.06 20.26 26.06"/>
+      <polyline class="cls-6" points="22.66 18.46 22.66 10.08 20.66 10.08 20.66 18.46"/>
+      <polyline class="cls-7" points="26.95 18.46 26.95 10.08 24.95 10.08 24.95 18.46"/>
+      <polyline points="24.65 26.06 24.65 2.21 23.65 2.21 23.65 26.06"/>
+      <polyline points="6.38 25.93 6.38 2.07 5.38 2.07 5.38 25.93 6.38 25.93"/>
+      <g class="cls-8">
+        <g class="cls-9">
+          <use transform="translate(2 2) scale(0.5)" xlink:href="#image"/>
+        </g>
+        <g class="cls-10">
+          <use transform="translate(2 2) scale(0.5)" xlink:href="#image-2"/>
+        </g>
+      </g>
+      <g class="cls-11">
+        <g class="cls-12">
+          <use transform="translate(6.5 2) scale(0.5)" xlink:href="#image"/>
+        </g>
+        <g class="cls-13">
+          <use transform="translate(6.5 2) scale(0.5)" xlink:href="#image-2"/>
+        </g>
+      </g>
+      <g class="cls-14">
+        <g class="cls-15">
+          <use transform="translate(11 2) scale(0.5)" xlink:href="#image-3"/>
+        </g>
+        <g class="cls-16">
+          <use transform="translate(11 2) scale(0.5)" xlink:href="#image-4"/>
+        </g>
+      </g>
+      <g class="cls-17">
+        <g class="cls-18">
+          <use transform="translate(15.5 2) scale(0.5)" xlink:href="#image"/>
+        </g>
+        <g class="cls-19">
+          <use transform="translate(15.5 2) scale(0.5)" xlink:href="#image-2"/>
+        </g>
+      </g>
+      <g class="cls-20">
+        <g class="cls-21">
+          <use transform="translate(20 2) scale(0.5)" xlink:href="#image-3"/>
+        </g>
+        <g class="cls-22">
+          <use transform="translate(20 2) scale(0.5)" xlink:href="#image-4"/>
+        </g>
+      </g>
+      <g class="cls-23">
+        <g class="cls-24">
+          <use transform="translate(24.5 2) scale(0.5)" xlink:href="#image-3"/>
+        </g>
+        <g class="cls-25">
+          <use transform="translate(24.5 2) scale(0.5)" xlink:href="#image-4"/>
+        </g>
+      </g>
+    </symbol>
+  </defs>
+  <title>WanIllu</title>
+  <g id="Base">
+    <circle class="cls-26" cx="294.31" cy="260.49" r="240.17" transform="translate(-15.09 18.11) rotate(-3.44)"/>
+    <circle class="cls-27" cx="225.06" cy="180.66" r="56.01"/>
+    <circle class="cls-27" cx="225.06" cy="180.66" r="56.01" transform="translate(-61.83 212.05) rotate(-45)"/>
+    <circle class="cls-27" cx="376.05" cy="268.9" r="56.01"/>
+    <circle class="cls-27" cx="226.06" cy="347.67" r="56.01" transform="translate(-143.55 159.61) rotate(-30)"/>
+    <path class="cls-27" d="M325.81,293.68c-3,17.41-28,33.15-49.07,30.14"/>
+    <path class="cls-27" d="M334.23,231.63c-6.48-18-31.26-34.78-56.86-30.94"/>
+    <path class="cls-27" d="M215.74,292.61c-9.51-12.68-12-39.73,2.48-56.36"/>
+    <g>
+      <path class="cls-28" d="M353.63,273.59h10.15a.84.84,0,0,0,.57-.17,1.24,1.24,0,0,0,.31-.6h.39v4.27h-.39a1.24,1.24,0,0,0-.31-.6.84.84,0,0,0-.57-.17H349.25v-.39a1.24,1.24,0,0,0,.61-.31A.84.84,0,0,0,350,275v-14a.84.84,0,0,0-.17-.57,1.25,1.25,0,0,0-.61-.31v-.39h5.15v.39a1.15,1.15,0,0,0-.61.31.86.86,0,0,0-.17.57Z"/>
+      <path class="cls-28" d="M379.79,272.1h-7.51l-1.11,2.32a2,2,0,0,0-.23.76q0,.53.81.74v.39h-5.46v-.39a1.47,1.47,0,0,0,.74-.34,3.33,3.33,0,0,0,.58-.94L373.68,262a2.42,2.42,0,0,0,.29-1q0-.56-.7-.8v-.39h5.86v.39q-.71.21-.71.71a1.78,1.78,0,0,0,.23.8l6.29,12.73a4.32,4.32,0,0,0,.7,1.11,1.53,1.53,0,0,0,.81.39v.39h-6.08v-.39q.8-.13.8-.75a1.94,1.94,0,0,0-.24-.75Zm-1-2.26L376.07,264l-2.72,5.88Z"/>
+      <path class="cls-28" d="M391.92,265v10a.84.84,0,0,0,.17.57,1.24,1.24,0,0,0,.61.31v.39h-4.85v-.39a1.25,1.25,0,0,0,.6-.31.84.84,0,0,0,.17-.57v-14a.82.82,0,0,0-.17-.56,1.25,1.25,0,0,0-.6-.31v-.39h5.61v.39c-.35.09-.52.27-.52.56a1,1,0,0,0,.34.64l9.11,9.47v-9.8a.82.82,0,0,0-.17-.56,1.24,1.24,0,0,0-.61-.31v-.39h4.85v.39a1.24,1.24,0,0,0-.6.31.82.82,0,0,0-.17.56v14a.84.84,0,0,0,.17.57,1.24,1.24,0,0,0,.6.31v.39h-5.2v-.39q.51-.11.51-.52,0-.24-.59-.85Z"/>
+    </g>
+    <g>
+      <path class="cls-28" d="M203.51,355.09h10.15a.84.84,0,0,0,.57-.17,1.24,1.24,0,0,0,.31-.6h.39v4.27h-.39a1.24,1.24,0,0,0-.31-.61.84.84,0,0,0-.57-.17H199.13v-.39a1.24,1.24,0,0,0,.6-.32.84.84,0,0,0,.17-.57v-14a.84.84,0,0,0-.17-.57,1.25,1.25,0,0,0-.6-.31v-.39h5.15v.39a1.15,1.15,0,0,0-.6.31.86.86,0,0,0-.17.57Z"/>
+      <path class="cls-28" d="M229.66,353.6h-7.51L221,355.92a1.94,1.94,0,0,0-.23.76q0,.53.81.74v.39h-5.46v-.39a1.47,1.47,0,0,0,.74-.34,3.33,3.33,0,0,0,.58-.94l6.07-12.69a2.42,2.42,0,0,0,.29-1q0-.56-.7-.8v-.39H229v.39q-.71.21-.71.71a1.78,1.78,0,0,0,.23.8l6.29,12.73a4.3,4.3,0,0,0,.7,1.11,1.54,1.54,0,0,0,.81.39v.39h-6.08v-.39q.8-.13.8-.75a2,2,0,0,0-.24-.75Zm-1-2.26-2.68-5.88-2.72,5.88Z"/>
+      <path class="cls-28" d="M241.8,346.5v10a.84.84,0,0,0,.17.57,1.23,1.23,0,0,0,.6.32v.39h-4.85v-.39a1.24,1.24,0,0,0,.6-.32.84.84,0,0,0,.17-.57v-14a.82.82,0,0,0-.17-.56,1.25,1.25,0,0,0-.6-.31v-.39h5.61v.39q-.52.13-.52.56a1,1,0,0,0,.34.64l9.11,9.47v-9.8a.82.82,0,0,0-.17-.56,1.24,1.24,0,0,0-.6-.31v-.39h4.85v.39a1.24,1.24,0,0,0-.6.31.82.82,0,0,0-.17.56v14a.84.84,0,0,0,.17.57,1.23,1.23,0,0,0,.6.32v.39h-5.2v-.39c.34-.07.51-.25.51-.52s-.2-.44-.59-.85Z"/>
+    </g>
+    <g>
+      <path class="cls-28" d="M200.83,183.78H211a.84.84,0,0,0,.57-.17,1.24,1.24,0,0,0,.31-.6h.39v4.27h-.39a1.24,1.24,0,0,0-.31-.6.84.84,0,0,0-.57-.17H196.45v-.39a1.24,1.24,0,0,0,.6-.31.84.84,0,0,0,.17-.57v-14a.84.84,0,0,0-.17-.57,1.25,1.25,0,0,0-.6-.31V170h5.15v.39a1.15,1.15,0,0,0-.6.31.87.87,0,0,0-.17.57Z"/>
+      <path class="cls-28" d="M227,182.29h-7.51l-1.11,2.32a1.94,1.94,0,0,0-.23.76q0,.53.81.74v.39h-5.46v-.39a1.46,1.46,0,0,0,.74-.34,3.32,3.32,0,0,0,.58-.94l6.07-12.69a2.42,2.42,0,0,0,.29-1q0-.56-.7-.8V170h5.86v.39q-.71.21-.71.71a1.79,1.79,0,0,0,.23.8l6.29,12.73a4.32,4.32,0,0,0,.7,1.11,1.53,1.53,0,0,0,.81.39v.39h-6.08v-.39q.8-.13.8-.75a1.94,1.94,0,0,0-.24-.75Zm-1-2.26-2.68-5.88L220.55,180Z"/>
+      <path class="cls-28" d="M239.12,175.19v10a.84.84,0,0,0,.17.57,1.24,1.24,0,0,0,.6.31v.39H235v-.39a1.24,1.24,0,0,0,.6-.31.84.84,0,0,0,.17-.57v-14a.82.82,0,0,0-.17-.56,1.25,1.25,0,0,0-.6-.31V170h5.61v.39q-.52.13-.52.56a1,1,0,0,0,.34.64l9.11,9.47v-9.8a.82.82,0,0,0-.17-.56,1.24,1.24,0,0,0-.6-.31V170h4.85v.39a1.24,1.24,0,0,0-.6.31.82.82,0,0,0-.17.56v14a.84.84,0,0,0,.17.57,1.24,1.24,0,0,0,.6.31v.39h-5.2v-.39q.51-.11.51-.52,0-.24-.59-.85Z"/>
+    </g>
+    <g>
+      <path class="cls-28" d="M354.65,127.53,347.34,146a6.47,6.47,0,0,0-.63,1.78q0,1.08,1.74,1.52v.75h-10.3v-.75q1.57-.3,1.57-1.59a10,10,0,0,0-.66-2.09L329.88,122a8.5,8.5,0,0,0-1.23-2.38,2.81,2.81,0,0,0-1.61-.83v-.75h11.12v.75q-1.48.33-1.48,1.38a4.85,4.85,0,0,0,.38,1.55l6.33,16.93,6.85-17a5.2,5.2,0,0,0,.45-1.45q0-1.08-1.57-1.38v-.75h11.63v.75q-1.59.42-1.59,1.52a4.92,4.92,0,0,0,.4,1.41l6.53,16.93L372.38,122a5.69,5.69,0,0,0,.49-1.85q0-1-1.69-1.36v-.75h11v.75a3.3,3.3,0,0,0-1.62.84A9.65,9.65,0,0,0,379.4,122l-9.17,23.6a8.11,8.11,0,0,0-.66,2.25q0,1.15,1.67,1.43v.75H360.8v-.75q1.64-.26,1.64-1.57a7.77,7.77,0,0,0-.73-2.11Z"/>
+      <path class="cls-28" d="M404.71,141.92H390.17l-2.15,4.5a3.76,3.76,0,0,0-.45,1.48q0,1,1.57,1.43v.75H378.56v-.75a2.84,2.84,0,0,0,1.43-.66,6.44,6.44,0,0,0,1.13-1.83l11.77-24.59a4.68,4.68,0,0,0,.56-1.87q0-1.08-1.36-1.55v-.75h11.34v.75q-1.38.4-1.38,1.38a3.46,3.46,0,0,0,.45,1.55l12.19,24.66a8.35,8.35,0,0,0,1.36,2.14,3,3,0,0,0,1.57.76v.75H405.83v-.75q1.55-.26,1.55-1.45a3.75,3.75,0,0,0-.47-1.45Zm-2-4.38-5.19-11.4-5.27,11.4Z"/>
+      <path class="cls-28" d="M428.22,128.16v19.45a1.63,1.63,0,0,0,.33,1.1,2.4,2.4,0,0,0,1.17.61v.75h-9.4v-.75a2.4,2.4,0,0,0,1.17-.61,1.63,1.63,0,0,0,.33-1.1V120.52a1.59,1.59,0,0,0-.33-1.08,2.4,2.4,0,0,0-1.17-.61v-.75H431.2v.75q-1,.26-1,1.08a1.91,1.91,0,0,0,.66,1.24l17.65,18.35v-19a1.59,1.59,0,0,0-.33-1.08,2.4,2.4,0,0,0-1.17-.61v-.75h9.4v.75a2.4,2.4,0,0,0-1.17.61,1.59,1.59,0,0,0-.33,1.08v27.09a1.63,1.63,0,0,0,.33,1.1,2.4,2.4,0,0,0,1.17.61v.75H446.31v-.75q1-.21,1-1,0-.47-1.15-1.64Z"/>
+    </g>
+  </g>
+  <g id="Comps">
+    <g id="ToplLRing">
+      <use width="44.75" height="35.34" transform="translate(182.69 246.09) rotate(-135) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(241.36 256.88) rotate(180) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(290.49 223.03) rotate(135) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(267.43 115.22) rotate(45) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(301.28 164.35) rotate(90) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(208.75 104.43) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(159.62 138.29) rotate(-45) scale(0.73)" xlink:href="#Computer"/>
+      <use width="29.4" height="26.43" transform="translate(146 167)" xlink:href="#Server"/>
+    </g>
+    <g id="RightRing">
+      <use width="44.75" height="35.34" transform="translate(452.71 254.41) rotate(90) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(401.83 195.26) rotate(30) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(325.17 209.75) rotate(-30) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(299.38 283.38) rotate(-90) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="translate(350.26 342.53) rotate(-150) scale(0.73)" xlink:href="#Computer"/>
+      <use width="44.75" height="35.34" transform="matrix(-0.63, 0.36, -0.36, -0.63, 426.92, 328.04)" xlink:href="#Computer"/>
+    </g>
+    <g id="BottomRing">
+      <use width="44.75" height="35.34" transform="translate(296.14 371.58) rotate(120) scale(0.58)" xlink:href="#Computer"/>
+      <use width="29.4" height="26.43" transform="translate(306.4 360.43) rotate(180)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="matrix(-0.87, 0.5, -0.5, -0.87, 302.01, 318.55)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(277.28 284.48) rotate(120)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(238.82 267.34) rotate(90)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(196.94 271.72) rotate(60)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(162.86 296.46) rotate(30)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(145.72 334.92)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(150.11 376.8) rotate(-30)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(174.84 410.87) rotate(-60)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(213.31 428.01) rotate(-90)" xlink:href="#Server"/>
+      <use width="29.4" height="26.43" transform="translate(255.18 423.63) rotate(-120)" xlink:href="#Server"/>
+    </g>
+  </g>
+</svg>

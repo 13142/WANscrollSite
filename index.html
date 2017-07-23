@@ -2,9 +2,274 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>WAN - Wide Area Networking Explained</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="resources/scripts/jquery-3.2.1.js"></script>
+    <!--<script src="https://use.fontawesome.com/78152b1d75.js"></script>-->
 </head>
 <body>
+<section class="panel titlePage">
+    <div class="left-side shallFlex col">
+        <div class="upper-point">
+        </div>
+        <div class="mid-point">
+            <h1 class="fadeHolder">W.A.N.</h1>
+            <h2 class="fadeHolder">Wide Area Networking</h2>
+        </div>
+        <div class="bot-point">
+        </div>
+    </div>
+    <div class="right-side shallFlex col centered">
+        <object id="frontPageImage" class="fadeHolder" data="resources/images/WanIllu.svg" type="images/svg+xml"></object>
+        <!--<img class="fadeHolder" src="resources/images/Wan%20Illustration.png">-->
+    </div>
+    <div class="scrollDown" id="frontPageScrollDown">
+        <div class="above fadeHolder">
+            Scroll down
+        </div>
+        <div class="fadeHolder zeroContainer">
+            <i class="fa chevron-down"></i>
+        </div>
+    </div>
+</section>
+<section class="panel tableOfContents">
+    <div class="left-side shallFlex col centered">
 
+        <div class="mid-point">
+            <h2 class="h15 fadeHolder">Table of Contents: </h2>
+            <h4 class="fadeHolder">Click on one of the topics, or just keep scrolling</h4>
+        </div>
+
+    </div>
+    <div class="mid-side">
+    </div>
+    <div class="right-side shallFlex col centered">
+        <div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+            <div class="contentItem fadeHolder"></div>
+        </div>
+    </div>
+</section>
+<section class="panel wanDefP01">
+    <div class="left-side shallFlex col">
+        <div class="upper-point">
+            <h2 class="h15 fadeHolder">What is WAN?</h2>
+        </div>
+        <div class="mid-point fadeHolder">
+            <p class="">
+                WAN stands for Wide Area Network, its exact definition is a very broad term, basically covering everything that is bigger than a
+                <a class="popupLink" data-target="lanExp">LAN</a>.
+                This means that WAN will cover something relatively small: <br>
+                Connecting 2 different regions together, to something as big as the internet itself, and even bigger, interplanetary networks, could all count as WAN.</p>
+            <p class="">
+                The difference between LAN, <a class="tooltipLink" data-target="manExp">MAN</a>...etc. and WAN is that WAN is not restricted to a location.
+                This means that you can’t communicate between computers in a WAN through Ethernet cables or wifi, and you can’t differentiate computers by their MAC address.
+                To communicate in a WAN, you have to connect through a TCP/IP suite.
+            </p>
+            <div class="tooltipInner" id="manExp">
+                <b>MAN</b> stands for <b>Metropolitan Area Network</b>
+                <hr>
+                MAN's normally consists of a few LAN's, similar to WAN, but cover a much more localized area, ranging from a school to a city.
+            </div>
+
+        </div>
+        <div class="bot-point">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+
+</section>
+
+<section class="panel wanSingleComp">
+    <div class="left-side shallFlex col">
+        <div class="upper-point">
+
+            <!--<h2 class="h15 fadeHolder">What is WAN?</h2>-->
+        </div>
+        <div class="mid-point">
+            <h4 class="fadeHolder">Let us start from a single computer, up to connecting the entire internet.</h4>
+            <p class="fadeHolder">Take note of the OSI model on the top right corner of the screen, each technology I mention will have its associated OSI layer highlighted, this
+                will be explained later.</p>
+        </div>
+        <div class="bot-point">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel firstSteps osi" osiTypes="Physical,DataLink">
+    <div class="left-side shallFlex col">
+        <div class="upper-point fadeHolder">
+            <h3>The first step is to transmit data from your computer to a router.</h3>
+            <!--<h2 class="h15 fadeHolder">What is WAN?</h2>-->
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <p>Wired technologies can be used, the most common wired technology is to use ethernet cables. Ethernet is a family of <b>physical and data link layer</b> computer
+                    network technology, is widely used in LANs, MANs, and WANs, because of it balance in speed, reliability, and cost. The ethernet technology defines how all data
+                    is transferred inside a modern LAN, on the first and second layer of the OSI model.</p>
+                <hr>
+                <p>Ethernet takes the data and places them inside a frame. The frame will contain both the data being sent, and meta-data about where the the data is being sent to
+                    via a <a class="popupLink" data-target="macExp">MAC</a> address of both the sender and receiver, and QoS (Quality of Service information include things like
+                    error rate, bit rate, throughput, transmission delay, availability...etc, these info can be used to get the quality of information.) information, and other
+                    error-checking / correcting information.
+                </p>
+                <hr>
+                <p>There are many different categories of Ethernet cables, which is explained very well <a
+                        href="http://www.ebay.com/gds/What-are-the-Different-Types-of-Ethernet-Cables-/10000000177629325/g.html" target="_blank">here</a></p>
+                <hr>
+            </div>
+            <div class="right-side-inner">
+                <img src="resources/images/ethernet-cable.png" style="max-height: 100%; max-width: 100%;">
+            </div>
+        </div>
+        <div class="bot-point">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel firstSteps osi" osiTypes="Physical,DataLink">
+    <div class="left-side shallFlex col">
+        <div class="upper-point fadeHolder">
+            <h3>Another method is through Wi-Fi</h3>
+            <!--<h2 class="h15 fadeHolder">What is WAN?</h2>-->
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <p>Wireless technologies takes the ethernet standard of transferring frames and packets into a wireless form with the 802.11 standard. There are many iterations of
+                    this standard, including the Wi-Fi standards 802.11, 802.11b, 802.11a, 802.11g, 802.11n, 802.11ac, and the most recent wireless technology, 802.11ad. Other
+                    branches of 802.11 include regional wireless technologies like 802.11j, which is designed for japan specifically, and other specific use cases.
+                </p>
+                <hr>
+                <p>What most of the 802.11 iterations use is the 2.4ghz radio band. 2.4 ghz is a good balance between range, penetration, and speed. From 802.11ac onwards, the 5.0
+                    ghz radio band is also now supported, an increase in radio frequency means an increase in speed, but at a cost of range and penetration. This means that 5ghz is
+                    more suitable in either open office spaces, or small houses, where range or penetration are not needed, and possibly even detrimental to security.
+                </p>
+                <hr>
+            </div>
+            <div class="right-side-inner">
+                <object id="wifiModel" data="resources/images/WifiSymbol.svg" type="images/svg+xml"></object>
+            </div>
+        </div>
+        <div class="bot-point">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel CompToRouterStep osi" osiTypes="Physical">
+    <div class="left-side shallFlex col">
+        <div class="upper-point fadeHolder">
+            <h2>Let's go down the wired route:</h2>
+            <h4>The ethernet cable can connect to a switch, hub, repeater,or straight into the router. </h4>
+            <!--<h2 class="h15 fadeHolder">What is WAN?</h2>-->
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <object id="repeaterModel" data="resources/images/Repeater.svg" type="images/svg+xml"></object>
+                <hr>
+                <p>Starting with repeaters, repeaters just take in a signal, boost it with an external power source, then send it onwards. This allows for very long ethernet
+                    connections to be made, without losing signal or quality, given that there are enough repeaters along the way.
+                </p>
+                <hr>
+            </div>
+            <div class="right-side-inner">
+                <!--<object id="wifiModel" data="resources/images/WifiSymbol.svg" type="images/svg+xml"></object>-->
+            </div>
+        </div>
+        <div class="bot-point">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+
+<section class="panel CompToRouterStep osi" osiTypes="Physical">
+    <div class="left-side shallFlex col">
+        <div class="upper-point fadeHolder">
+            <h3>Hubs</h3>
+            <p>Hubs have multiple <a class="tooltipLink" data-target="hardwarePortsExp">hardware ports</a> What hubs do is that when a packet comes in from one of the ports
+                (through an ethernet cable). The hub replicates what is sent in out through all the other ports. Hubs are not that common anymore, as they blast the packets they
+                receive to everybody, causing network congestion. Switches (explained below) are much more common nowadays.
+            </p>
+            <!--<h2 class="h15 fadeHolder">What is WAN?</h2>-->
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <!--<hr>-->
+                <!--<p>Starting with repeaters, repeaters just take in a signal, boost it with an external power source, then send it onwards. This allows for very long ethernet-->
+                    <!--connections to be made, without losing signal or quality, given that there are enough repeaters along the way.-->
+                <!--</p>-->
+                <!--<hr>-->
+            </div>
+            <div class="right-side-inner">
+                <!--<object id="wifiModel" data="resources/images/WifiSymbol.svg" type="images/svg+xml"></object>-->
+            </div>
+        </div>
+        <div class="bot-point">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+    <div class="tooltipInner" id="hardwarePortsExp">
+        These are different from TCP/UDP ports on OSI level 4
+    </div>
+</section>
+<object id="osiModel" data="resources/images/OsiModel.svg" type="images/svg+xml"></object>
+
+<div class="background World"></div>
+<div class="background Comp"></div>
+<div class="background CompToRouter"></div>
+<!--Popups-->
+<section>
+    <div class="popupInner" id="lanExp">
+        <div class="linedHeader">LAN --> Local Area Network</div>
+        A LAN consists of a group of <a class="tooltipLink" data-target="networkDevicesExamples">network capable devices</a> that connects together in a
+        <a class="tooltipLink" data-target="smallAreaExamples">relatively small area</a>. Most LANs usually connect to a router that manages the communication between the localized
+        LAN network,
+        and the bigger WAN network the LAN is connected to. Wi-fi, and Ethernet is usually used to connect devices together in a LAN.
+        <div class="tooltipInner" id="networkDevicesExamples">
+            Computers, laptops, phones, "Smart" devices...etc
+        </div>
+        <div class="tooltipInner" id="smallAreaExamples">
+            Houses, schools, laboratories, university campuses or office buildings...etc.
+        </div>
+    </div>
+    <div class="popupInner" id="macExp">
+        <div class="linedHeader">MAC --> Media Access Control</div>
+        MAC addresses are an unique identifier on every network capable product, specifically on the network interface card. It is made up of 6 pairs of hexadecimal digits (6
+        bytes), which is a total of 48 bits. E.g. 5B:4D:77:19:F0:BA, this allows for 2^48 combinations ( < 281 trillion). Manufacturers of network cards also try to make sure that
+        every product they produce has a unique MAC address.
+    </div>
+</section>
+
+<div id="darkenOverlay"></div>
 </body>
+<script src="resources/scripts/jquery.svg.es5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<script src="resources/jBox/jBox.js"></script>
+<script src="index.js"></script>
 </html>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 207.17">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #42a5f5;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 11.95 3.98;
+      }
+
+      .cls-3 {
+        fill: red;
+      }
+
+      .cls-4 {
+        stroke: lime;
+      }
+    </style>
+  </defs>
+  <title>Repeater</title>
+  <g id="WireLayer">
+    <g>
+      <line class="cls-1" x1="30" y1="106.59" x2="36" y2="106.59"/>
+      <line class="cls-2" x1="39.98" y1="106.59" x2="962.01" y2="106.59"/>
+      <line class="cls-1" x1="964" y1="106.59" x2="970" y2="106.59"/>
+    </g>
+  </g>
+  <g id="Signal">
+    <rect class="cls-3" x="19.28" y="94.59" width="21.44" height="21.44"/>
+  </g>
+  <g id="Repeater">
+    <rect x="415" y="59.34" width="170" height="92"/>
+    <polyline class="cls-4" points="585 118.08 585 152.59 415 152.59 415 118.46"/>
+    <polyline class="cls-4" points="415 93.09 415 60.59 585 60.59 585 93.09"/>
+  </g>
+</svg>
