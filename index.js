@@ -12,62 +12,89 @@ var slides = $("section.panel");
 var element = $("<div>", {
     "class": "tempHolder"
 });
-var controller = new ScrollMagic.Controller({
-    globalSceneOptions: {
-        triggerHook: "onLeave"
-    }
-});
+var controller = new ScrollMagic.Controller({});
 for (var i = 0; i < slides.length; i++) {
+    var addedHeight = 0;
+    var currentSection = $(slides[i]);
+    if (currentSection.hasClass("slidable")) {
+        var innerSlides = currentSection.find(".slideIn");
+        var numOfSlides = innerSlides.length;
+        addedHeight = $(window).height() * 0.5 * numOfSlides;
+        for (var ii = 0; ii < numOfSlides; ii++) {
+            var anotherTrigger = element.clone().css({ top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight * (ii / numOfSlides) }).appendTo(document.body);
+            new ScrollMagic.Scene({
+                triggerElement: anotherTrigger[0],
+                triggerHook: "onLeave"
+            }).setTween(TweenMax.from(innerSlides[ii], 0.5, { autoAlpha: 0, ease: Power2.easeOut, y: $(window).height() })).addTo(controller);
+        }
+    }
+    if (currentSection.hasClass("osi")) {
+        new ScrollMagic.Scene({
+            triggerElement: currentSection[0],
+            duration: (120 + addedHeight / $(window).height()) + "%",
+            triggerHook: "onCenter"
+        }).on("enter", osiModelLights).addTo(controller);
+    }
+    currentSection.css("marginBottom", addedHeight);
     var currentScene = new ScrollMagic.Scene({
-        triggerElement: slides[i]
-    }).setPin(slides[i]).addIndicators().addTo(controller);
+        triggerElement: slides[i],
+        triggerHook: "onLeave"
+    }).setPin(slides[i]).addTo(controller);
     var children = slides.eq(i).find(".fadeHolder");
     if (i == 0) {
         for (var ii = 0; ii < children.length; ii++) {
             var relativeTopPos = children.eq(ii).offset().top - slides.eq(i).offset().top;
             new ScrollMagic.Scene({
                 triggerElement: slides[i],
-                duration: "100%"
+                duration: "100%",
+                triggerHook: "onLeave"
             }).setTween(TweenMax.to(children[ii], 1, { y: -((relativeTopPos / $(window).height()) * 400 + 300), opacity: 0 })).addTo(controller);
             //console.log(children[ii]);
         }
         continue;
     }
-    var tempHolder = element.clone().css({ top: $(slides[i]).offset().top + $(slides[i]).height() * 0.2 }).appendTo(document.body);
+    var tempHolder = element.clone().css({ top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight }).appendTo(document.body);
     for (var ii = 0; ii < children.length; ii++) {
         var relativeTopPos = children.eq(ii).offset().top - slides.eq(i).offset().top;
         new ScrollMagic.Scene({
             triggerElement: tempHolder[0],
-            duration: "100%"
+            duration: "100%",
+            triggerHook: "onLeave"
         }).setTween(TweenMax.to(children[ii], 1, { y: -((relativeTopPos / $(window).height()) * 400 + 300), autoAlpha: 0 })).addTo(controller);
         //console.log(children[ii]);
     }
 }
 var osiModels = $(".osi");
 for (var i = 0; i < osiModels.length; i++) {
-    var currentSection = $(osiModels[i]);
-    new ScrollMagic.Scene({
-        triggerElement: currentSection[0]
-    }).on("enter", osiModelLights).addTo(controller);
+}
+function osiModelLightsLeave(event) {
+    var osiTypes = $(event.currentTarget.triggerElement()).attr("osiTypes").split(",");
+    var svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
+    osiAnimEnd();
+    for (var i = 0; i < osiTypes.length; i++) {
+        TweenMax.to($("#" + osiTypes[i] + "Layer", svgEle), 1, { autoAlpha: 1 });
+    }
 }
 function osiModelLights(event) {
     var osiTypes = $(event.currentTarget.triggerElement()).attr("osiTypes").split(",");
     var svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
     osiAnimEnd();
     for (var i = 0; i < osiTypes.length; i++) {
-        console.log($("#" + osiTypes[i] + "Layer", svgEle));
         TweenMax.to($("#" + osiTypes[i] + "Layer", svgEle), 1, { autoAlpha: 1 });
     }
 }
 new ScrollMagic.Scene({
-    triggerElement: $("section.wanSingleComp")[0]
+    triggerElement: $("section.wanSingleComp")[0],
+    triggerHook: 0.5
 }).setTween(TweenMax.to($(".background.Comp, #osiModel"), 0.5, { autoAlpha: 1 })).on("enter", osiAnim).on("enter", startRepeaterTimeline).on("leave", osiAnimEnd).addTo(controller);
 new ScrollMagic.Scene({
-    triggerElement: $("section.firstSteps")[0]
+    triggerElement: $("section.firstSteps")[0],
+    triggerHook: "onLeave"
 }).on("leave", osiAnim).addTo(controller);
 new ScrollMagic.Scene({
-    triggerElement: $("section.CompToRouterStep")[0]
-}).setTween(TweenMax.to($(".background.CompToRouter"), 0.5, { autoAlpha: 1 })).addTo(controller);
+    triggerElement: $("section.CompToRouterStep")[0],
+    triggerHook: "onCenter"
+}).setTween(TweenMax.to($(".background.CompToRouter"), 0.5, { autoAlpha: 1 })).on("enter", startHubTimeline).addTo(controller);
 function osiAnim() {
     var svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
     var toAnimate = $(svgEle).children("g");
@@ -123,6 +150,14 @@ function startRepeaterTimeline() {
     repeaterTimeline.fromTo($("#Signal", svgEle), duration * (0.4162) - startFadeDelay, { opacity: 0.8 }, { opacity: 0.3, ease: Power0.easeNone }, startFadeDelay)
         .to($("#Signal", svgEle), 0.01, { opacity: 1 }, duration * (0.4162));
     repeaterTimeline.play();
+}
+function startHubTimeline() {
+    var svgEle = $("#hubModel")[0]["contentDocument"].documentElement;
+    var hubTimeline = new TimelineMax({ repeat: -1 });
+    var duration = 3;
+    hubTimeline.fromTo($("#OriginalSig", svgEle), 2 * duration / 3, { x: 0 }, { x: "1847%" /*TODO: Yes this scales, but there's gotta be a better way*/, ease: Power0.easeNone }, 0);
+    hubTimeline.fromTo($("#OutputSig", svgEle), duration / 3, { y: 0 }, { y: "765%", ease: Power0.easeNone }, "+=0.5");
+    hubTimeline.play();
 }
 function initializeTooltips() {
     $(".tooltipLink").each(function (i) {

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="This scrolling site explains Wide Area Networks">
     <title>WAN - Wide Area Networking Explained</title>
     <link rel="stylesheet" href="index.css">
     <script src="resources/scripts/jquery-3.2.1.js"></script>
@@ -74,11 +75,6 @@
                 This means that you can’t communicate between computers in a WAN through Ethernet cables or wifi, and you can’t differentiate computers by their MAC address.
                 To communicate in a WAN, you have to connect through a TCP/IP suite.
             </p>
-            <div class="tooltipInner" id="manExp">
-                <b>MAN</b> stands for <b>Metropolitan Area Network</b>
-                <hr>
-                MAN's normally consists of a few LAN's, similar to WAN, but cover a much more localized area, ranging from a school to a city.
-            </div>
 
         </div>
         <div class="bot-point">
@@ -202,7 +198,7 @@
     </div>
 </section>
 
-<section class="panel CompToRouterStep osi" osiTypes="Physical">
+<section class="panel CompToRouterStep osi slidable" osiTypes="Physical">
     <div class="left-side shallFlex col">
         <div class="upper-point fadeHolder">
             <h3>Hubs</h3>
@@ -215,11 +211,25 @@
 
         <div class="mid-point shallFlex row fadeHolder">
             <div class="left-side-inner">
-                <!--<hr>-->
-                <!--<p>Starting with repeaters, repeaters just take in a signal, boost it with an external power source, then send it onwards. This allows for very long ethernet-->
-                    <!--connections to be made, without losing signal or quality, given that there are enough repeaters along the way.-->
-                <!--</p>-->
-                <!--<hr>-->
+                <div class="slideIn">
+                    <hr>
+                    <p>There are mainly 2 types of hubs: Passive hubs and active hubs. </p>
+                    <hr>
+                </div>
+                <div class="slideIn">
+                    <p>
+                        <b>Active hubs:</b> Active hubs basically combines the passive hub and a repeater, boosting the signal before sending it to every port. Because it is
+                        boosting
+                        the signal, an external power source is needed. </p>
+                    <p>
+                        <b>Passive hubs:</b> Passive hubs just replicates what is received in one port to every other port. Passive hubs generally don’t need an external power
+                        source.
+                    </p>
+                    <hr>
+                </div>
+                <div class="slideIn">
+                    <object id="hubModel" data="resources/images/Hub.svg" type="images/svg+xml"></object>
+                </div>
             </div>
             <div class="right-side-inner">
                 <!--<object id="wifiModel" data="resources/images/WifiSymbol.svg" type="images/svg+xml"></object>-->
@@ -233,6 +243,69 @@
     </div>
     <div class="tooltipInner" id="hardwarePortsExp">
         These are different from TCP/UDP ports on OSI level 4
+    </div>
+</section>
+<section class="panel CompToRouterStep osi" osiTypes="DataLink">
+    <div class="left-side shallFlex col">
+        <div class="upper-point fadeHolder">
+            <h3>Switches</h3>
+            <!--<h2 class="h15 fadeHolder">What is WAN?</h2>-->
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <hr>
+                Switches are smart hubs. They are very similar to hubs, however, they actually have processing power and they read the metadata the packet/frame contains. Switches
+                can figure out which recipient of a particular is for, and only send the packet down that port. As you can imagine, this heavily reduces network congestion. On the
+                topic of network congestion, a factor that influences network congestion is the <a class="popupLink" data-target="comTypeExp">type of communication system used.</a>.
+                <hr>
+            </div>
+            <div class="right-side-inner">
+                <object id="switchModel" data="resources/images/Switch.svg" type="images/svg+xml"></object>
+            </div>
+        </div>
+        <div class="bot-point">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel CompToRouterStep osi slidable" osiTypes="DataLink,Network">
+    <div class="left-side shallFlex col">
+        <div class="upper-point fadeHolder">
+            <h3>Router</h3>
+            <!--<h2 class="h15 fadeHolder">What is WAN?</h2>-->
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <div class="slideIn">
+                    <hr>
+                    If the packet ever needs to leave the LAN network, it would eventually need to pass through a router. The router is a gateway that provides a connection for the
+                    local network to connect to other networks. This creates a <a class="tooltipLink" data-target="manExp">MAN</a>.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    Most consumer routers combines a switch with the router itself, so that multiple ethernet devices can be connected directly to the router.
+
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    If your router is given to you by your <a class="tooltipLink" data-target="ispExp">ISP</a> also probably combined with a modem so that it can directly connect
+                    to
+                    the your ISP to access the internet.
+                </div>
+            </div>
+            <div class="right-side-inner">
+                <!--<object id="switchModel" data="resources/images/Switch.svg" type="images/svg+xml"></object>-->
+            </div>
+        </div>
+        <div class="bot-point">
+
+        </div>
+    </div>
+    <div class="right-side">
     </div>
 </section>
 <object id="osiModel" data="resources/images/OsiModel.svg" type="images/svg+xml"></object>
@@ -260,6 +333,30 @@
         MAC addresses are an unique identifier on every network capable product, specifically on the network interface card. It is made up of 6 pairs of hexadecimal digits (6
         bytes), which is a total of 48 bits. E.g. 5B:4D:77:19:F0:BA, this allows for 2^48 combinations ( < 281 trillion). Manufacturers of network cards also try to make sure that
         every product they produce has a unique MAC address.
+    </div>
+    <div class="popupInner" id="comTypeExp">
+        <div class="linedHeader">Simplex, Half-Duplex, and Full-Duplex</div>
+        Communication systems can be classified as simplex, half-duplex, and full-duplex. Simplex communications just means one way communications e.g: a tv remote, data is sent
+        from the remote, but the tv never responds with any data. <br>
+        Duplex communications means 2 way communications, and both sides can send message to the other at the same
+        time. <br>
+        Half duplex only allows for communications in one direction at once. The receiver must wait for a “over” message before sending out their own message. 802.11 Wifi is an
+        example of half duplex communication.
+
+    </div>
+</section>
+
+<!--Tooltips-->
+<section>
+    <div class="tooltipInner" id="manExp">
+        <b>MAN</b> stands for <b>Metropolitan Area Network</b>
+        <hr>
+        MAN's normally consists of a few LAN's, similar to WAN, but cover a much more localized area, ranging from a school to a city.
+    </div>
+    <div class="tooltipInner" id="ispExp">
+        <b>ISP</b> stands for <b>Internet Service Provider</b>
+        <hr>
+        ISPs provides the connection from your LAN or MAN to the internet.
     </div>
 </section>
 

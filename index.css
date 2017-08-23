@@ -172,22 +172,24 @@ p {
       flex: 0 0 50%; }
     .panel.firstSteps .mid-point .right-side-inner {
       flex: 1 1 auto; }
-  .panel.CompToRouterStep .left-side {
-    flex: 0 1 auto; }
-  .panel.CompToRouterStep .right-side {
-    flex: 1 1 10%; }
-  .panel.CompToRouterStep .upper-point {
-    flex: 0 1 15%; }
-  .panel.CompToRouterStep .mid-point {
-    margin-left: 20%;
-    flex: 0 0 40%; }
-    .panel.CompToRouterStep .mid-point .left-side-inner {
-      padding: 0 20px;
-      border-left: white solid medium;
-      border-right: white solid medium;
-      flex: 0 0 50%; }
-    .panel.CompToRouterStep .mid-point .right-side-inner {
-      flex: 1 1 auto; }
+  .panel.CompToRouterStep {
+    margin-bottom: 400px; }
+    .panel.CompToRouterStep .left-side {
+      flex: 0 1 auto; }
+    .panel.CompToRouterStep .right-side {
+      flex: 1 1 10%; }
+    .panel.CompToRouterStep .upper-point {
+      flex: 0 1 15%; }
+    .panel.CompToRouterStep .mid-point {
+      margin-left: 20%;
+      flex: 0 0 40%; }
+      .panel.CompToRouterStep .mid-point .left-side-inner {
+        padding: 0 20px;
+        border-left: white solid medium;
+        border-right: white solid medium;
+        flex: 0 0 50%; }
+      .panel.CompToRouterStep .mid-point .right-side-inner {
+        flex: 1 1 auto; }
 
 #osiModel {
   visibility: hidden;

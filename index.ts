@@ -18,16 +18,37 @@ let element = $("<div>", {
     class: "tempHolder",
 });
 
-const controller = new ScrollMagic.Controller({
-    globalSceneOptions: {
-        triggerHook: "onLeave",
-    }
-});
+const controller = new ScrollMagic.Controller({});
 
 for (let i = 0; i < slides.length; i++) {
+    let addedHeight = 0;
+    let currentSection = $(slides[i]);
+    if (currentSection.hasClass("slidable")) {
+        let innerSlides = currentSection.find(".slideIn");
+        let numOfSlides = innerSlides.length;
+        addedHeight = $(window).height() * 0.5 * numOfSlides;
+        for (let ii = 0; ii < numOfSlides; ii++) {
+            let anotherTrigger = element.clone().css({top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight * (ii / numOfSlides)}).appendTo(document.body);
+            new ScrollMagic.Scene({
+               triggerElement: anotherTrigger[0],
+                triggerHook: "onLeave"
+            }).setTween(TweenMax.from(innerSlides[ii],0.5, {autoAlpha: 0, ease: Power2.easeOut ,y: $(window).height()})).addTo(controller);
+        }
+    }
+
+    if (currentSection.hasClass("osi")) {
+        new ScrollMagic.Scene({
+            triggerElement: currentSection[0],
+            duration: (120 + addedHeight / $(window).height()) + "%",
+            triggerHook: "onCenter"
+        }).on("enter", osiModelLights).addTo(controller);
+    }
+
+    currentSection.css("marginBottom", addedHeight);
     let currentScene = new ScrollMagic.Scene({
-        triggerElement: slides[i]
-    }).setPin(slides[i]).addIndicators().addTo(controller);
+        triggerElement: slides[i],
+        triggerHook: "onLeave"
+    }).setPin(slides[i]).addTo(controller);
 
     let children = slides.eq(i).find(".fadeHolder");
     if (i == 0) {
@@ -35,18 +56,20 @@ for (let i = 0; i < slides.length; i++) {
             let relativeTopPos = children.eq(ii).offset().top - slides.eq(i).offset().top;
             new ScrollMagic.Scene({
                 triggerElement: slides[i],
-                duration: "100%"
+                duration: "100%",
+                triggerHook: "onLeave"
             }).setTween(TweenMax.to(children[ii], 1, {y: -((relativeTopPos / $(window).height()) * 400 + 300), opacity: 0})).addTo(controller);
             //console.log(children[ii]);
         }
         continue;
     }
-    let tempHolder = element.clone().css({top: $(slides[i]).offset().top + $(slides[i]).height() * 0.2}).appendTo(document.body);
+    let tempHolder = element.clone().css({top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight}).appendTo(document.body);
     for (let ii = 0; ii < children.length; ii++) {
         let relativeTopPos = children.eq(ii).offset().top - slides.eq(i).offset().top;
         new ScrollMagic.Scene({
             triggerElement: tempHolder[0],//$(slides[i]).children(".tempHolder").get(0),
-            duration: "100%"
+            duration: "100%",
+            triggerHook: "onLeave"
         }).setTween(TweenMax.to(children[ii], 1, {y: -((relativeTopPos / $(window).height()) * 400 + 300), autoAlpha: 0})).addTo(controller);
         //console.log(children[ii]);
     }
@@ -54,11 +77,16 @@ for (let i = 0; i < slides.length; i++) {
 
 let osiModels = $(".osi");
 for (let i = 0; i < osiModels.length; i++) {
-    let currentSection = $(osiModels[i]);
 
-    new ScrollMagic.Scene({
-        triggerElement: currentSection[0],
-    }).on("enter", osiModelLights).addTo(controller);
+}
+
+function osiModelLightsLeave(event) {
+    let osiTypes = $(event.currentTarget.triggerElement()).attr("osiTypes").split(",");
+    let svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
+    osiAnimEnd();
+    for (let i = 0; i < osiTypes.length; i++) {
+        TweenMax.to($("#" + osiTypes[i] + "Layer", svgEle), 1, {autoAlpha: 1});
+    }
 }
 
 function osiModelLights(event) {
@@ -66,23 +94,24 @@ function osiModelLights(event) {
     let svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
     osiAnimEnd();
     for (let i = 0; i < osiTypes.length; i++) {
-        console.log($("#" + osiTypes[i] + "Layer", svgEle));
         TweenMax.to($("#" + osiTypes[i] + "Layer", svgEle), 1, {autoAlpha: 1});
     }
 }
 
-
 new ScrollMagic.Scene({
-    triggerElement: $("section.wanSingleComp")[0]
+    triggerElement: $("section.wanSingleComp")[0],
+    triggerHook: 0.5
 }).setTween(TweenMax.to($(".background.Comp, #osiModel"), 0.5, {autoAlpha: 1})).on("enter", osiAnim).on("enter", startRepeaterTimeline).on("leave", osiAnimEnd).addTo(controller);
 
 new ScrollMagic.Scene({
-    triggerElement: $("section.firstSteps")[0]
+    triggerElement: $("section.firstSteps")[0],
+    triggerHook: "onLeave"
 }).on("leave", osiAnim).addTo(controller);
 
 new ScrollMagic.Scene({
-    triggerElement: $("section.CompToRouterStep")[0]
-}).setTween(TweenMax.to($(".background.CompToRouter"), 0.5, {autoAlpha: 1})).addTo(controller);
+    triggerElement: $("section.CompToRouterStep")[0],
+    triggerHook: "onCenter"
+}).setTween(TweenMax.to($(".background.CompToRouter"), 0.5, {autoAlpha: 1})).on("enter", startHubTimeline).addTo(controller);
 
 function osiAnim() {
     let svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
@@ -150,7 +179,15 @@ function startRepeaterTimeline() {
 
     repeaterTimeline.play();
 }
+function startHubTimeline() {
+    let svgEle = $("#hubModel")[0]["contentDocument"].documentElement;
+    let hubTimeline = new TimelineMax({repeat: -1});
+    const duration = 3;
+    hubTimeline.fromTo($("#OriginalSig", svgEle), 2 * duration / 3, {x: 0}, {x: "1847%" /*TODO: Yes this scales, but there's gotta be a better way*/, ease: Power0.easeNone}, 0);
+    hubTimeline.fromTo($("#OutputSig", svgEle), duration / 3, {y: 0}, {y:"765%", ease: Power0.easeNone}, "+=0.5");
 
+    hubTimeline.play();
+}
 
 function initializeTooltips() {
     $(".tooltipLink").each(function (i) {

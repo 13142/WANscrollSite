@@ -116,6 +116,7 @@ p {
   padding-left: 5%;
   position: relative;
   background: none;
+
   &.titlePage {
     background: none;
     height: 100%;
@@ -268,6 +269,7 @@ p {
     }
   }
   &.CompToRouterStep {
+    margin-bottom: 400px;
     .left-side {
       flex: 0 1 auto;
 
