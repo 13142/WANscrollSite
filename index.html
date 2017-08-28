@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="right-side shallFlex col centered">
-        <object id="frontPageImage" class="fadeHolder" data="resources/images/WanIllu.svg" type="images/svg+xml"></object>
+        <object id="frontPageImage" class="fadeHolder" data="resources/images/WanIllu.svg" type="image/svg+xml"></object>
         <!--<img class="fadeHolder" src="resources/images/Wan%20Illustration.png">-->
     </div>
     <div class="scrollDown" id="frontPageScrollDown">
@@ -159,7 +159,7 @@
                 <hr>
             </div>
             <div class="right-side-inner">
-                <object id="wifiModel" data="resources/images/WifiSymbol.svg" type="images/svg+xml"></object>
+                <object id="wifiModel" data="resources/images/WifiSymbol.svg" type="image/svg+xml"></object>
             </div>
         </div>
         <div class="bot-point">
@@ -179,7 +179,7 @@
 
         <div class="mid-point shallFlex row fadeHolder">
             <div class="left-side-inner">
-                <object id="repeaterModel" data="resources/images/Repeater.svg" type="images/svg+xml"></object>
+                <object id="repeaterModel" data="resources/images/Repeater.svg" type="image/svg+xml"></object>
                 <hr>
                 <p>Starting with repeaters, repeaters just take in a signal, boost it with an external power source, then send it onwards. This allows for very long ethernet
                     connections to be made, without losing signal or quality, given that there are enough repeaters along the way.
@@ -187,7 +187,7 @@
                 <hr>
             </div>
             <div class="right-side-inner">
-                <!--<object id="wifiModel" data="resources/images/WifiSymbol.svg" type="images/svg+xml"></object>-->
+                <!--<object id="wifiModel" data="resources/images/WifiSymbol.svg" type="image/svg+xml"></object>-->
             </div>
         </div>
         <div class="bot-point">
@@ -228,11 +228,11 @@
                     <hr>
                 </div>
                 <div class="slideIn">
-                    <object id="hubModel" data="resources/images/Hub.svg" type="images/svg+xml"></object>
+                    <object id="hubModel" data="resources/images/Hub.svg" type="image/svg+xml"></object>
                 </div>
             </div>
             <div class="right-side-inner">
-                <!--<object id="wifiModel" data="resources/images/WifiSymbol.svg" type="images/svg+xml"></object>-->
+                <!--<object id="wifiModel" data="resources/images/WifiSymbol.svg" type="image/svg+xml"></object>-->
             </div>
         </div>
         <div class="bot-point">
@@ -261,7 +261,7 @@
                 <hr>
             </div>
             <div class="right-side-inner">
-                <object id="switchModel" data="resources/images/Switch.svg" type="images/svg+xml"></object>
+                <object id="switchModel" width="100%" height="100%" data="resources/images/Switch.svg" type="image/svg+xml"></object>
             </div>
         </div>
         <div class="bot-point">
@@ -279,8 +279,8 @@
         </div>
 
         <div class="mid-point shallFlex row fadeHolder">
-            <div class="left-side-inner">
-                <div class="slideIn">
+            <div class="left-side-inner ">
+                <div class="slideIn ">
                     <hr>
                     If the packet ever needs to leave the LAN network, it would eventually need to pass through a router. The router is a gateway that provides a connection for the
                     local network to connect to other networks. This creates a <a class="tooltipLink" data-target="manExp">MAN</a>.
@@ -288,17 +288,15 @@
                 <div class="slideIn">
                     <hr>
                     Most consumer routers combines a switch with the router itself, so that multiple ethernet devices can be connected directly to the router.
-
                 </div>
                 <div class="slideIn">
                     <hr>
-                    If your router is given to you by your <a class="tooltipLink" data-target="ispExp">ISP</a> also probably combined with a modem so that it can directly connect
-                    to
-                    the your ISP to access the internet.
+                    If your router is given to you by your <a class="tooltipLink" data-target="ispExp">ISP</a> also probably combined with a
+                    <a href="https://www.lifewire.com/what-is-a-modem-817861" target="_blank">modem</a> so that it can directly connect to your ISP to access the internet.
                 </div>
             </div>
             <div class="right-side-inner">
-                <!--<object id="switchModel" data="resources/images/Switch.svg" type="images/svg+xml"></object>-->
+                <!--<object id="switchModel" data="resources/images/Switch.svg" type="image/svg+xml"></object>-->
             </div>
         </div>
         <div class="bot-point">
@@ -308,7 +306,92 @@
     <div class="right-side">
     </div>
 </section>
-<object id="osiModel" data="resources/images/OsiModel.svg" type="images/svg+xml"></object>
+
+<section class="panel CompToRouterStep osi slidable" osiTypes="DataLink,Network,Transport">
+    <div class="left-side shallFlex col">
+        <div class="upper-point fadeHolder">
+            <h3>Miscellaneous</h3>
+            <h4 class="fadeHolder">Other devices on a network could include:</h4>
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <div class="slideIn">
+                    <hr>
+                    <a class="tooltipLink" data-target="nasExp">NAS</a>: These devices are computers that are specifically
+                    designed and optimized to store data, and transfer data over the network. <a class="tooltipLink" data-target="nasExp">NAS</a>’s allows other devices on the
+                    network (and possibly outside the network through the router) to access the data stored on the <a class="tooltipLink" data-target="nasExp">NAS</a>.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    Firewall: A firewall is a list of rules that is checked against all the traffic that passes through it.<br>
+                    These rules can specifies <a class="tooltipLink" data-target="fwIdentifiers">which type of traffic</a> can do <a class="tooltipLink" data-target="fwActions">what</a>.<br>
+                    Firewalls are normally placed in front of the router that is connected to the external WAN as the first line of defense against attacks, filtering out most of
+                    the unwanted traffic.
+                    Your personal computer probably comes with a firewall, which has basic configurations like allowing http/s traffic through to your computer so that you can see
+                    this website.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    <a class="tooltipLink" data-target="dhcpExp">DHCP</a> Server assigns devices with their own unique internal IP on the network. Rules can be set to define how
+                    the IP's are set out, these rules include:
+                    <ul>
+                        <li>Choosing the range of IP addresses that the router can assign to devices</li>
+                        <li>Exclude specific ip addresses from being assigned</li>
+                        <li>Configuring the subnet masks</li>
+                        <li>Set the <a class="tooltipLink" data-target="leaseTimeExp">lease time</a> for each ip.
+                        </li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    <a class="tooltipLink" data-target="dhcpExp">Bridges</a> LA DA LA DA TODO TODO TODO
+                    <ul>
+                        <li>LA DA LA DA TODO TODO TODO</li>
+                        <li>LA DA LA DA TODO TODO TODO</li>
+                        <li>LA DA LA DA TODO TODO TODO</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-side-inner">
+                <!--<object id="switchModel" data="resources/images/Switch.svg" type="image/svg+xml"></object>-->
+            </div>
+        </div>
+        <div class="bot-point fadeHolder">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel PhysicalTopologies osi slidable" osiTypes="DataLink,Network,Transport">
+    <div class="left-side shallFlex col">
+        <div class="upper-point">
+
+        </div>
+        <div class="mid-point">
+            <h2 class="fadeHolder">Physical Network Topologies</h2>
+            <h5 class="fadeHolder">Physical topologies are how network devices are physically connected together (either through wires, or through Wifi technologies), it describes
+            which devices any particular device connects to.</h5>
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+
+<section class="panel CompToRouterStep osi slidable" osiTypes="DataLink,Network,Transport">
+    <div class="left-side shallFlex col">
+        <div class="upper-point fadeHolder">
+            <h2>Physical Network Topologies</h2>
+            <h4 class="fadeHolder">Physical topologies are how network devices are physically connected together (either through wires, or through Wifi technologies), it describes
+                which devices any particular device connects to.</h4>
+        </div>
+
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<object id="osiModel" data="resources/images/OsiModel.svg" type="image/svg+xml"></object>
 
 <div class="background World"></div>
 <div class="background Comp"></div>
@@ -319,8 +402,7 @@
         <div class="linedHeader">LAN --> Local Area Network</div>
         A LAN consists of a group of <a class="tooltipLink" data-target="networkDevicesExamples">network capable devices</a> that connects together in a
         <a class="tooltipLink" data-target="smallAreaExamples">relatively small area</a>. Most LANs usually connect to a router that manages the communication between the localized
-        LAN network,
-        and the bigger WAN network the LAN is connected to. Wi-fi, and Ethernet is usually used to connect devices together in a LAN.
+        LAN network, and the bigger WAN network the LAN is connected to. Wi-fi, and Ethernet is usually used to connect devices together in a LAN.
         <div class="tooltipInner" id="networkDevicesExamples">
             Computers, laptops, phones, "Smart" devices...etc
         </div>
@@ -342,7 +424,6 @@
         time. <br>
         Half duplex only allows for communications in one direction at once. The receiver must wait for a “over” message before sending out their own message. 802.11 Wifi is an
         example of half duplex communication.
-
     </div>
 </section>
 
@@ -352,6 +433,42 @@
         <b>MAN</b> stands for <b>Metropolitan Area Network</b>
         <hr>
         MAN's normally consists of a few LAN's, similar to WAN, but cover a much more localized area, ranging from a school to a city.
+    </div>
+    <div class="tooltipInner" id="fwIdentifiers">
+        Possible identifiers for different traffic:
+        <hr>
+        <ul>
+            <li>Source</li>
+            <li>Destination</li>
+            <li>Port Number</li>
+            <li>Encrypted or not</li>
+            <li>Size</li>
+            <li>Contents</li>
+            <li>Signed or not</li>
+            <li>Internal or external</li>
+        </ul>
+    </div>
+    <div class="tooltipInner" id="fwActions">
+        Possible actions on traffic:
+        <hr>
+        <ul>
+            <li>Block</li>
+            <li>Allow</li>
+            <li>Redirect traffic (e.g. pass to proxy)</li>
+            <li>Encrypt or Decrypt</li>
+            <li>Restrict speed</li>
+        </ul>
+    </div>
+    <div class="tooltipInner" id="leaseTimeExp">
+        This is just the longest time for a device to be disconnected from the network before the ip is taken back to the pool, <br>and the device will be assigned a new ip address
+        the
+        next time it connects
+    </div>
+    <div class="tooltipInner" id="dhcpExp">
+        <b>DHCP</b> stands for <b>Dynamic Host Configuration Protocol</b>
+    </div>
+    <div class="tooltipInner" id="nasExp">
+        <b>NAS</b> stands for <b>Network Attached Storage</b>
     </div>
     <div class="tooltipInner" id="ispExp">
         <b>ISP</b> stands for <b>Internet Service Provider</b>

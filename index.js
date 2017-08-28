@@ -20,12 +20,31 @@ for (var i = 0; i < slides.length; i++) {
         var innerSlides = currentSection.find(".slideIn");
         var numOfSlides = innerSlides.length;
         addedHeight = $(window).height() * 0.5 * numOfSlides;
+        var aggregrateHeight = 0;
+        var maxHeight = innerSlides.parent().innerHeight();
+        console.log(maxHeight);
+        var topOfTheStack = 0;
         for (var ii = 0; ii < numOfSlides; ii++) {
             var anotherTrigger = element.clone().css({ top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight * (ii / numOfSlides) }).appendTo(document.body);
+            var toDoLine = new TimelineMax();
+            toDoLine.from(innerSlides[ii], 0.5, { autoAlpha: 0, ease: Power2.easeOut, y: $(window).height() }, 0);
+            var heightToAdd = innerSlides.eq(ii).height();
+            if (heightToAdd > maxHeight) {
+                throw "Inner item bigger than container";
+            }
+            aggregrateHeight += heightToAdd;
+            console.log(aggregrateHeight);
+            while (aggregrateHeight > maxHeight) {
+                aggregrateHeight -= innerSlides.eq(topOfTheStack).height();
+                toDoLine.to(innerSlides[topOfTheStack], 0.5, { overflow: "hidden", height: 0, ease: Power2.easeInOut }, 0);
+                console.log("does this run?");
+                topOfTheStack++;
+            }
             new ScrollMagic.Scene({
                 triggerElement: anotherTrigger[0],
                 triggerHook: "onLeave"
-            }).setTween(TweenMax.from(innerSlides[ii], 0.5, { autoAlpha: 0, ease: Power2.easeOut, y: $(window).height() })).addTo(controller);
+            }).setTween(toDoLine).addTo(controller);
+            //TweenMax.from(innerSlides[ii],0.5, {autoAlpha: 0, ease: Power2.easeOut ,y: $(window).height()})
         }
     }
     if (currentSection.hasClass("osi")) {

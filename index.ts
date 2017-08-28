@@ -15,7 +15,7 @@ initializeTooltips();
 let slides = $("section.panel");
 
 let element = $("<div>", {
-    class: "tempHolder",
+    "class": "tempHolder",
 });
 
 const controller = new ScrollMagic.Controller({});
@@ -27,12 +27,32 @@ for (let i = 0; i < slides.length; i++) {
         let innerSlides = currentSection.find(".slideIn");
         let numOfSlides = innerSlides.length;
         addedHeight = $(window).height() * 0.5 * numOfSlides;
+        let aggregrateHeight = 0;
+        let maxHeight = innerSlides.parent().innerHeight();
+        console.log(maxHeight);
+        let topOfTheStack = 0;
         for (let ii = 0; ii < numOfSlides; ii++) {
             let anotherTrigger = element.clone().css({top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight * (ii / numOfSlides)}).appendTo(document.body);
+            let toDoLine = new TimelineMax();
+            toDoLine.from(innerSlides[ii], 0.5, {autoAlpha: 0, ease: Power2.easeOut ,y: $(window).height()},0);
+            let heightToAdd = innerSlides.eq(ii).height();
+            if (heightToAdd > maxHeight) {
+                throw "Inner item bigger than container";
+            }
+            aggregrateHeight += heightToAdd;
+            console.log(aggregrateHeight);
+            while (aggregrateHeight > maxHeight) {
+                aggregrateHeight -= innerSlides.eq(topOfTheStack).height();
+                toDoLine.to(innerSlides[topOfTheStack], 0.5, { overflow: "hidden", height: 0 , ease: Power2.easeInOut}, 0);
+                console.log("does this run?");
+                topOfTheStack++;
+            }
+
             new ScrollMagic.Scene({
                triggerElement: anotherTrigger[0],
                 triggerHook: "onLeave"
-            }).setTween(TweenMax.from(innerSlides[ii],0.5, {autoAlpha: 0, ease: Power2.easeOut ,y: $(window).height()})).addTo(controller);
+            }).setTween(toDoLine).addTo(controller);
+            //TweenMax.from(innerSlides[ii],0.5, {autoAlpha: 0, ease: Power2.easeOut ,y: $(window).height()})
         }
     }
 

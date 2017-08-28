@@ -256,7 +256,8 @@ p {
 
       margin-left: 20%;
 
-      flex: 0 0 40%;
+      flex: 0 0 50vh;
+      max-height: 50vh;
       .left-side-inner {
         padding: 0 20px;
         border-left: white solid medium;
@@ -269,7 +270,7 @@ p {
     }
   }
   &.CompToRouterStep {
-    margin-bottom: 400px;
+    //margin-bottom: 400px;
     .left-side {
       flex: 0 1 auto;
 
@@ -285,7 +286,8 @@ p {
 
       margin-left: 20%;
 
-      flex: 0 0 40%;
+      max-height: 50vh;
+      flex: 0 0 50vh;
       .left-side-inner {
         padding: 0 20px;
         border-left: white solid medium;
@@ -297,6 +299,20 @@ p {
       }
     }
 
+  }
+
+  &.PhysicalTopologies {
+    .upper-point {
+      flex: 0 1 15vh;
+    }
+    h5 {
+      font-size: 12pt;
+    }
+    .mid-point {
+      flex: 0 0 50vh;
+      max-width: 100%;
+
+    }
   }
 }
 
@@ -354,14 +370,15 @@ a {
 
 .tooltipInner {
   display: none;
-  font-size: 15pt;
+  font-size: 12pt;
+  font-weight: 200;
   padding: 5px 10px;
   background-color: transparentize(black, 0.25);
   color: white;
   border-color: white;
   border-width: 2px;
   border-style: solid;
-
+  max-width: 100%;
   //position: absolute;
   //z-index: 1;
   //bottom: 125%;
@@ -468,7 +485,9 @@ a.tooltipLink {
     transform: rotate(45deg);
   }
 }
-
+.slideIn {
+  overflow: auto;
+}
 .zeroContainer {
   font-size: 0;
 }
