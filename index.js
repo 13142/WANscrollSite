@@ -22,7 +22,6 @@ for (var i = 0; i < slides.length; i++) {
         addedHeight = $(window).height() * 0.5 * numOfSlides;
         var aggregrateHeight = 0;
         var maxHeight = innerSlides.parent().innerHeight();
-        console.log(maxHeight);
         var topOfTheStack = 0;
         for (var ii = 0; ii < numOfSlides; ii++) {
             var anotherTrigger = element.clone().css({ top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight * (ii / numOfSlides) }).appendTo(document.body);
@@ -83,11 +82,21 @@ for (var i = 0; i < slides.length; i++) {
         //console.log(children[ii]);
     }
 }
-var osiModels = $(".osi");
-for (var i = 0; i < osiModels.length; i++) {
-}
+// let osiModels = $(".osi");
+// for (let i = 0; i < osiModels.length; i++) {
+//
+// }
+var osiTcpRelationship = {
+    "Physical": "NetInterface",
+    "DataLink": "NetInterface",
+    "Network": "Network",
+    "Transport": "Transport",
+    "Session": "Application",
+    "Presentation": "Application",
+    "Application": "Application"
+};
 function osiModelLightsLeave(event) {
-    var osiTypes = $(event.currentTarget.triggerElement()).attr("osiTypes").split(",");
+    var osiTypes = $(event.currentTarget.triggerElement()).attr("data-osiTypes").split(",");
     var svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
     osiAnimEnd();
     for (var i = 0; i < osiTypes.length; i++) {
@@ -95,10 +104,11 @@ function osiModelLightsLeave(event) {
     }
 }
 function osiModelLights(event) {
-    var osiTypes = $(event.currentTarget.triggerElement()).attr("osiTypes").split(",");
+    var osiTypes = $(event.currentTarget.triggerElement()).attr("data-osiTypes").split(",");
     var svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
     osiAnimEnd();
     for (var i = 0; i < osiTypes.length; i++) {
+        TweenMax.to($("#" + osiTcpRelationship[osiTypes[i]], svgEle), 1, { autoAlpha: 1 });
         TweenMax.to($("#" + osiTypes[i] + "Layer", svgEle), 1, { autoAlpha: 1 });
     }
 }
@@ -116,14 +126,14 @@ new ScrollMagic.Scene({
 }).setTween(TweenMax.to($(".background.CompToRouter"), 0.5, { autoAlpha: 1 })).on("enter", startHubTimeline).addTo(controller);
 function osiAnim() {
     var svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
-    var toAnimate = $(svgEle).children("g");
+    var toAnimate = $(svgEle).children().children("g");
     toAnimate.each((function (index, elem) {
         TweenMax.fromTo(elem, 0.75, { autoAlpha: 0.3 }, { delay: index * 0.75, repeatDelay: toAnimate.length * 0.75, autoAlpha: 1, repeat: -1, yoyo: true, ease: Power1.easeInOut });
     }));
 }
 function osiAnimEnd() {
     var svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
-    var toAnimate = $(svgEle).children("g");
+    var toAnimate = $(svgEle).children().children("g");
     TweenMax.killTweensOf(toAnimate);
     TweenMax.to(toAnimate, 0.5, { autoAlpha: 0.3 });
 }

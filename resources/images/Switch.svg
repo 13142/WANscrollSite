@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 371">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-7, .cls-8 {
+        fill: none;
+        stroke-width: 10px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #42a5f5;
+      }
+
+      .cls-1, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-2, .cls-3, .cls-7, .cls-8, .cls-9 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 12.07 4.02;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 12 4;
+      }
+
+      .cls-12, .cls-4 {
+        fill: red;
+      }
+
+      .cls-5 {
+        fill: #0025ff;
+      }
+
+      .cls-6 {
+        fill: #00ff1e;
+      }
+
+      .cls-7, .cls-8 {
+        stroke: lime;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 48.15 37.21;
+      }
+
+      .cls-9 {
+        fill: #0068ff;
+      }
+
+      .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-9 {
+        stroke: #000;
+      }
+
+      .cls-10 {
+        fill: #fff;
+      }
+
+      .cls-11 {
+        fill: #31ef22;
+      }
+
+      .cls-13 {
+        fill: #ee1dff;
+      }
+
+      .cls-14 {
+        fill: #ff0;
+      }
+    </style>
+  </defs>
+  <title>Switch</title>
+  <g id="WireLayer">
+    <g>
+      <line class="cls-1" x1="30" y1="76" x2="36" y2="76"/>
+      <line class="cls-2" x1="40.02" y1="76" x2="826.65" y2="76"/>
+      <line class="cls-1" x1="828.67" y1="76" x2="834.67" y2="76"/>
+    </g>
+    <line class="cls-3" x1="456.33" y1="84.7" x2="456.33" y2="264.5"/>
+    <line class="cls-3" x1="539.67" y1="84.7" x2="539.67" y2="264.5"/>
+    <line class="cls-3" x1="626.33" y1="84.7" x2="626.33" y2="264.5"/>
+    <line class="cls-3" x1="712.33" y1="84.7" x2="712.33" y2="264.5"/>
+    <line class="cls-3" x1="796.33" y1="84.7" x2="796.33" y2="264.5"/>
+  </g>
+  <g id="Signal">
+    <g id="OriginalSig">
+      <rect class="cls-4" x="30" y="63.27" width="21.44" height="21.44"/>
+      <rect class="cls-5" x="110.11" y="235.9" width="21.44" height="21.44"/>
+      <rect class="cls-6" x="213.28" y="65.28" width="21.44" height="21.44"/>
+    </g>
+  </g>
+  <g id="Repeater">
+    <rect x="415" y="30" width="422.67" height="92"/>
+    <g>
+      <polyline class="cls-7" points="837.67 87.5 837.67 122 815.67 122"/>
+      <polyline class="cls-8" points="778.46 122 472.67 122 455.61 122"/>
+      <polyline class="cls-7" points="437 122 415 122 415 87.88"/>
+    </g>
+    <polyline class="cls-7" points="415 62.5 415 30 837.67 30 837.67 62.5"/>
+    <g id="Computer">
+      <rect class="cls-9" x="433.06" y="257.34" width="42.79" height="25.59" rx="5" ry="5"/>
+      <polygon class="cls-10" points="454.46 290.19 448.65 282.93 460.27 282.93 454.46 290.19"/>
+      <polygon class="cls-10" points="474.72 294.18 434.83 294.18 433.03 287.95 473.12 287.95 474.72 294.18"/>
+      <path class="cls-10" d="M479.11,293.64h-1.26a1.74,1.74,0,0,1-1.43-1.29l-.78-2.71c-.17-.58.12-1,.63-1h1.1a1.59,1.59,0,0,1,1.31,1l1,2.71C480,293.07,479.7,293.64,479.11,293.64Z"/>
+    </g>
+    <g id="Computer-2" data-name="Computer">
+      <rect class="cls-11" x="516.4" y="257.34" width="42.79" height="25.59" rx="5" ry="5"/>
+      <polygon class="cls-10" points="537.79 290.19 531.99 282.93 543.6 282.93 537.79 290.19"/>
+      <polygon class="cls-10" points="558.05 294.18 518.16 294.18 516.37 287.95 556.45 287.95 558.05 294.18"/>
+      <path class="cls-10" d="M562.45,293.64h-1.26a1.74,1.74,0,0,1-1.43-1.29l-.78-2.71c-.17-.58.12-1,.63-1h1.1a1.59,1.59,0,0,1,1.31,1l1,2.71C563.29,293.07,563,293.64,562.45,293.64Z"/>
+    </g>
+    <g id="Computer-3" data-name="Computer">
+      <rect class="cls-12" x="603.06" y="257.84" width="42.79" height="25.59" rx="5" ry="5"/>
+      <polygon class="cls-10" points="624.46 290.69 618.65 283.43 630.27 283.43 624.46 290.69"/>
+      <polygon class="cls-10" points="644.72 294.68 604.83 294.68 603.03 288.45 643.12 288.45 644.72 294.68"/>
+      <path class="cls-10" d="M649.11,294.14h-1.26a1.74,1.74,0,0,1-1.43-1.29l-.78-2.71c-.17-.58.12-1,.63-1h1.1a1.59,1.59,0,0,1,1.31,1l1,2.71C650,293.57,649.7,294.14,649.11,294.14Z"/>
+    </g>
+    <g id="Computer-4" data-name="Computer">
+      <rect class="cls-13" x="689.76" y="258.37" width="42.79" height="25.59" rx="5" ry="5"/>
+      <polygon class="cls-10" points="711.15 291.23 705.35 283.96 716.96 283.96 711.15 291.23"/>
+      <polygon class="cls-10" points="731.41 295.21 691.52 295.21 689.73 288.98 729.81 288.98 731.41 295.21"/>
+      <path class="cls-10" d="M735.81,294.67h-1.26a1.74,1.74,0,0,1-1.43-1.29l-.78-2.71c-.17-.58.12-1,.63-1h1.1a1.59,1.59,0,0,1,1.31,1l1,2.71C736.65,294.1,736.39,294.67,735.81,294.67Z"/>
+    </g>
+    <g id="Computer-5" data-name="Computer">
+      <rect class="cls-14" x="775.12" y="259.9" width="42.79" height="25.59" rx="5" ry="5"/>
+      <polygon class="cls-10" points="796.52 292.75 790.71 285.49 802.33 285.49 796.52 292.75"/>
+      <polygon class="cls-10" points="816.78 296.74 776.89 296.74 775.09 290.51 815.18 290.51 816.78 296.74"/>
+      <path class="cls-10" d="M821.17,296.2h-1.26a1.74,1.74,0,0,1-1.43-1.29l-.78-2.71c-.17-.58.12-1,.63-1h1.1a1.59,1.59,0,0,1,1.31,1l1,2.71C822,295.62,821.76,296.2,821.17,296.2Z"/>
+    </g>
+  </g>
+</svg>

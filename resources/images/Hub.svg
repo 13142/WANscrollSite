@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 371">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-5, .cls-6 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #42a5f5;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 12.03 4.01;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 12 4;
+      }
+
+      .cls-4 {
+        fill: red;
+      }
+
+      .cls-5, .cls-6 {
+        stroke: lime;
+      }
+
+      .cls-6 {
+        stroke-dasharray: 48.15 37.21;
+      }
+    </style>
+  </defs>
+  <title>Hub</title>
+  <g id="WireLayer">
+    <g>
+      <line class="cls-1" x1="30" y1="76" x2="36" y2="76"/>
+      <line class="cls-2" x1="40.01" y1="76" x2="406.99" y2="76"/>
+      <line class="cls-1" x1="409" y1="76" x2="415" y2="76"/>
+    </g>
+    <line class="cls-3" x1="456.33" y1="122" x2="456.33" y2="264.5"/>
+    <line class="cls-3" x1="539.67" y1="122" x2="539.67" y2="264.5"/>
+    <line class="cls-3" x1="626.33" y1="122" x2="626.33" y2="264.5"/>
+    <line class="cls-3" x1="712.33" y1="122" x2="712.33" y2="264.5"/>
+    <line class="cls-3" x1="796.33" y1="122" x2="796.33" y2="264.5"/>
+  </g>
+  <g id="Signal">
+    <g id="OriginalSig">
+      <rect class="cls-4" x="19.28" y="64" width="21.44" height="21.44"/>
+    </g>
+    <g id="OutputSig">
+      <rect class="cls-4" x="445.61" y="100.56" width="21.44" height="21.44"/>
+      <rect class="cls-4" x="528.95" y="100.56" width="21.44" height="21.44"/>
+      <rect class="cls-4" x="615.28" y="100.56" width="21.44" height="21.44"/>
+      <rect class="cls-4" x="701.61" y="100.56" width="21.44" height="21.44"/>
+      <rect class="cls-4" x="785.61" y="100.56" width="21.44" height="21.44"/>
+    </g>
+  </g>
+  <g id="Repeater">
+    <rect x="415" y="30" width="422.67" height="92"/>
+    <g>
+      <polyline class="cls-5" points="837.67 87.5 837.67 122 815.67 122"/>
+      <polyline class="cls-6" points="778.46 122 472.67 122 455.61 122"/>
+      <polyline class="cls-5" points="437 122 415 122 415 87.88"/>
+    </g>
+    <polyline class="cls-5" points="415 62.5 415 30 837.67 30 837.67 62.5"/>
+  </g>
+</svg>

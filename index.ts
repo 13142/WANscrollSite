@@ -29,12 +29,11 @@ for (let i = 0; i < slides.length; i++) {
         addedHeight = $(window).height() * 0.5 * numOfSlides;
         let aggregrateHeight = 0;
         let maxHeight = innerSlides.parent().innerHeight();
-        console.log(maxHeight);
         let topOfTheStack = 0;
         for (let ii = 0; ii < numOfSlides; ii++) {
             let anotherTrigger = element.clone().css({top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight * (ii / numOfSlides)}).appendTo(document.body);
             let toDoLine = new TimelineMax();
-            toDoLine.from(innerSlides[ii], 0.5, {autoAlpha: 0, ease: Power2.easeOut ,y: $(window).height()},0);
+            toDoLine.from(innerSlides[ii], 0.5, {autoAlpha: 0, ease: Power2.easeOut, y: $(window).height()}, 0);
             let heightToAdd = innerSlides.eq(ii).height();
             if (heightToAdd > maxHeight) {
                 throw "Inner item bigger than container";
@@ -43,13 +42,13 @@ for (let i = 0; i < slides.length; i++) {
             console.log(aggregrateHeight);
             while (aggregrateHeight > maxHeight) {
                 aggregrateHeight -= innerSlides.eq(topOfTheStack).height();
-                toDoLine.to(innerSlides[topOfTheStack], 0.5, { overflow: "hidden", height: 0 , ease: Power2.easeInOut}, 0);
+                toDoLine.to(innerSlides[topOfTheStack], 0.5, {overflow: "hidden", height: 0, ease: Power2.easeInOut}, 0);
                 console.log("does this run?");
                 topOfTheStack++;
             }
 
             new ScrollMagic.Scene({
-               triggerElement: anotherTrigger[0],
+                triggerElement: anotherTrigger[0],
                 triggerHook: "onLeave"
             }).setTween(toDoLine).addTo(controller);
             //TweenMax.from(innerSlides[ii],0.5, {autoAlpha: 0, ease: Power2.easeOut ,y: $(window).height()})
@@ -95,13 +94,22 @@ for (let i = 0; i < slides.length; i++) {
     }
 }
 
-let osiModels = $(".osi");
-for (let i = 0; i < osiModels.length; i++) {
-
-}
+// let osiModels = $(".osi");
+// for (let i = 0; i < osiModels.length; i++) {
+//
+// }
+const osiTcpRelationship = {
+    "Physical": "NetInterface",
+    "DataLink": "NetInterface",
+    "Network": "Network",
+    "Transport": "Transport",
+    "Session": "Application",
+    "Presentation": "Application",
+    "Application": "Application"
+};
 
 function osiModelLightsLeave(event) {
-    let osiTypes = $(event.currentTarget.triggerElement()).attr("osiTypes").split(",");
+    let osiTypes = $(event.currentTarget.triggerElement()).attr("data-osiTypes").split(",");
     let svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
     osiAnimEnd();
     for (let i = 0; i < osiTypes.length; i++) {
@@ -110,10 +118,11 @@ function osiModelLightsLeave(event) {
 }
 
 function osiModelLights(event) {
-    let osiTypes = $(event.currentTarget.triggerElement()).attr("osiTypes").split(",");
+    let osiTypes = $(event.currentTarget.triggerElement()).attr("data-osiTypes").split(",");
     let svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
     osiAnimEnd();
     for (let i = 0; i < osiTypes.length; i++) {
+        TweenMax.to($("#" + osiTcpRelationship[osiTypes[i]], svgEle), 1, {autoAlpha: 1});
         TweenMax.to($("#" + osiTypes[i] + "Layer", svgEle), 1, {autoAlpha: 1});
     }
 }
@@ -135,7 +144,7 @@ new ScrollMagic.Scene({
 
 function osiAnim() {
     let svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
-    let toAnimate = $(svgEle).children("g");
+    let toAnimate = $(svgEle).children().children("g");
     toAnimate.each(((index, elem) => {
         TweenMax.fromTo(elem, 0.75, {autoAlpha: 0.3}, {delay: index * 0.75, repeatDelay: toAnimate.length * 0.75, autoAlpha: 1, repeat: -1, yoyo: true, ease: Power1.easeInOut});
     }));
@@ -143,7 +152,7 @@ function osiAnim() {
 
 function osiAnimEnd() {
     let svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
-    let toAnimate = $(svgEle).children("g");
+    let toAnimate = $(svgEle).children().children("g");
     TweenMax.killTweensOf(toAnimate);
     TweenMax.to(toAnimate, 0.5, {autoAlpha: 0.3});
 }
@@ -163,7 +172,6 @@ $("#darkenOverlay").click(eventObject => {
         $(document.body).removeClass("modalOpen");
     }
 });
-
 
 $("#frontPageImage")[0].addEventListener("load", function () {
     let svgEle = $("#frontPageImage")[0]["contentDocument"].documentElement;
@@ -195,16 +203,17 @@ function startRepeaterTimeline() {
     const startFadeDelay = 0.5;
     repeaterTimeline.fromTo($("#Signal", svgEle), duration, {x: 0}, {x: "4434%" /*Yes this scales, but there's gotta be a better way*/, ease: Power0.easeNone}, 0);
     repeaterTimeline.fromTo($("#Signal", svgEle), duration * (0.4162) - startFadeDelay, {opacity: 0.8}, {opacity: 0.3, ease: Power0.easeNone}, startFadeDelay)
-        .to($("#Signal", svgEle), 0.01,{opacity: 1}, duration * (0.4162));
+        .to($("#Signal", svgEle), 0.01, {opacity: 1}, duration * (0.4162));
 
     repeaterTimeline.play();
 }
+
 function startHubTimeline() {
     let svgEle = $("#hubModel")[0]["contentDocument"].documentElement;
     let hubTimeline = new TimelineMax({repeat: -1});
     const duration = 3;
     hubTimeline.fromTo($("#OriginalSig", svgEle), 2 * duration / 3, {x: 0}, {x: "1847%" /*TODO: Yes this scales, but there's gotta be a better way*/, ease: Power0.easeNone}, 0);
-    hubTimeline.fromTo($("#OutputSig", svgEle), duration / 3, {y: 0}, {y:"765%", ease: Power0.easeNone}, "+=0.5");
+    hubTimeline.fromTo($("#OutputSig", svgEle), duration / 3, {y: 0}, {y: "765%", ease: Power0.easeNone}, "+=0.5");
 
     hubTimeline.play();
 }

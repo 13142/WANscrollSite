@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Prime";
+  font-weight: normal;
+  src: url("../resources/fonts/Prime Regular.otf")
+}
+
+@font-face {
+  font-family: "Prime";
+  font-weight: 200;
+  src: url("../resources/fonts/Prime Light.otf")
+}
+
+@mixin noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin bevel($width) {
+  box-shadow:  0 $width $width*2 #fff, /*bottom external highlight*/
+  0 -$width $width #666, /*top external shadow*/
+  inset 0 -$width $width rgba(0,0,0,0.5), /*bottom internal shadow*/
+  inset 0 $width $width rgba(255,255,255,0.8); /*top internal highlight*/
+}
+
+body {
+  font-family: Prime, sans-serif;
+  background-image: url("../resources/images/PageBackground.png");
+  background-color: black;
+  background-repeat: repeat;
+  background-position: top;
+  text-align: center;
+  color: white;
+
+}
+
+h1 {
+  margin-top: 8%;
+  font-size: 45pt;
+  border-left: white solid 8px;
+  border-right: white solid 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  @include noselect;
+  padding: 0 20px;
+  cursor: default;
+}
+.grid-container {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4,1fr); // 4 columns, equal width
+  grid-gap: 10px;
+  grid-template-rows: 100px 100px; // 2 rows, equal height
+  //grid-auto-rows: minmax(100px, auto);
+  align-items: center;
+  justify-items: center;
+  margin-top: 10%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:hidden;
+}
+.arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 12.5px 0 12.5px;
+  border-color: #ffffff transparent transparent transparent;
+  grid-row: 1;
+}
+.cover {
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  opacity: 0.75;
+//@include bevel(5px);
+  box-shadow: 0 0 15px 15px white;
+  cursor: pointer;
+  //border: thick white solid
+}
+.button {
+  @include noselect;
+  color: black;
+  text-align: center;
+  background-color: white;
+  display: block;
+  cursor: pointer;
+  width: 125px;
+  height: 50px;
+  padding: 0 5px;
+  padding-top: 10px;
+  grid-row: 2;
+  border-radius: 2px;
+}
