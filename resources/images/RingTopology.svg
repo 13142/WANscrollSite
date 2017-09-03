@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 527 440">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-5 {
+        stroke: lime;
+      }
+
+      .cls-1, .cls-10, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-3 {
+        stroke-width: 7px;
+      }
+
+      .cls-2 {
+        stroke-width: 8px;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        stroke-linecap: round;
+      }
+
+      .cls-10, .cls-4, .cls-5, .cls-8, .cls-9 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: red;
+        stroke-width: 10px;
+      }
+
+      .cls-10, .cls-5 {
+        stroke-width: 5px;
+      }
+
+      .cls-6, .cls-7, .cls-8 {
+        stroke: #fff;
+      }
+
+      .cls-7 {
+        fill: red;
+      }
+
+      .cls-9 {
+        stroke: aqua;
+        stroke-width: 13px;
+      }
+
+      .cls-10, .cls-9 {
+        stroke-dasharray: 12;
+      }
+
+      .cls-10 {
+        stroke: #0068ff;
+      }
+    </style>
+    <symbol id="Router" data-name="Router" viewBox="0 0 126.58 21">
+      <polyline class="cls-6" points="125.7 10 125.7 9.45 113.14 0.5 13.68 0.5 0.84 9.51 0.52 20.5 125.7 20.5 125.7 18 125.7 11.46"/>
+      <polygon class="cls-7" points="18.12 0.5 0.76 12.29 0.84 9.32 13.68 0.5 18.12 0.5"/>
+      <polygon class="cls-7" points="108.69 0.5 126.06 12.29 125.97 9.32 113.14 0.5 108.69 0.5"/>
+      <line class="cls-8" x1="56.15" y1="0.5" x2="63.14" y2="20.47"/>
+      <line class="cls-8" x1="52.66" y1="0.5" x2="59.65" y2="20.47"/>
+      <polygon class="cls-7" points="52.66 20.47 45.67 0.5 49.16 0.5 56.15 20.47 52.66 20.47"/>
+      <line class="cls-8" x1="73.75" y1="0.5" x2="66.75" y2="20.47"/>
+      <line class="cls-8" x1="77.24" y1="0.5" x2="70.25" y2="20.47"/>
+      <polygon class="cls-7" points="77.24 20.47 84.23 0.5 80.74 0.5 73.75 20.47 77.24 20.47"/>
+    </symbol>
+    <symbol id="DarkComp" data-name="DarkComp" viewBox="0 0 415.48 327.89">
+      <rect class="cls-1" x="4.91" y="3.5" width="372.75" height="222.94" rx="5" ry="5"/>
+      <polygon class="cls-2" points="191.28 289.7 140.69 226.44 241.87 226.44 191.28 289.7"/>
+      <polygon class="cls-3" points="367.73 324.39 20.27 324.39 4.65 270.13 353.79 270.13 367.73 324.39"/>
+      <path class="cls-1" d="M406,319.7l-11-.08c-5.13,0-10.74-5.14-12.48-11.2l-6.79-23.65c-1.44-5,1-8.94,5.51-8.89l9.56.11c4.45.05,9.54,4,11.42,9.06l8.85,23.61C413.37,314.71,411.12,319.74,406,319.7Z"/>
+      <line class="cls-4" x1="29.76" y1="30.92" x2="241.93" y2="30.92"/>
+      <line class="cls-4" x1="29.76" y1="63.02" x2="276.7" y2="63.02"/>
+      <line class="cls-4" x1="29.76" y1="95.11" x2="188.89" y2="95.11"/>
+      <line class="cls-4" x1="29.76" y1="127.2" x2="236.14" y2="127.2"/>
+      <line class="cls-5" x1="35.55" y1="289.9" x2="304.33" y2="289.9"/>
+      <line class="cls-5" x1="41.35" y1="305.5" x2="313.25" y2="305.5"/>
+    </symbol>
+  </defs>
+  <title>RingTopology</title>
+  <g id="Wires">
+    <line class="cls-9" x1="468.53" y1="457.78" x2="352.36" y2="344.82"/>
+    <circle class="cls-10" cx="275.05" cy="225.06" r="129.19"/>
+  </g>
+  <g id="Layer_1" data-name="Layer 1">
+    <use id="Router-3" data-name="Router" width="126.58" height="21" transform="translate(265.71 330.18) scale(0.87 1.19)" xlink:href="#Router"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <use width="415.48" height="327.89" transform="translate(145.86 285.52) scale(0.14)" xlink:href="#DarkComp"/>
+    <use width="415.48" height="327.89" transform="translate(122.95 156.19) scale(0.14)" xlink:href="#DarkComp"/>
+    <use width="415.48" height="327.89" transform="translate(234.9 73.29) scale(0.14)" xlink:href="#DarkComp"/>
+    <use width="415.48" height="327.89" transform="translate(350.86 111.53) scale(0.14)" xlink:href="#DarkComp"/>
+    <use width="415.48" height="327.89" transform="translate(379.46 225.06) scale(0.14)" xlink:href="#DarkComp"/>
+  </g>
+</svg>
