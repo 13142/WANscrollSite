@@ -14,6 +14,7 @@ declare interface jBoxSettings {
     onCreated?: Function;
     onOpen?: Function;
     onClose?: Function;
+    theme?: string;
 }
 declare class jBox {
     constructor(type: string, settings?: jBoxSettings);

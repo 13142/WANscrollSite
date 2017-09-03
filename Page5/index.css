@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Prime";
   font-weight: normal;
-  src: url("resources/fonts/Prime Regular.otf"); }
+  src: url("../resources/fonts/Prime Regular.otf"); }
 @font-face {
   font-family: "Prime";
   font-weight: 200;
-  src: url("resources/fonts/Prime Light.otf"); }
+  src: url("../resources/fonts/Prime Light.otf"); }
 html {
   height: 100%; }
 
@@ -305,25 +305,25 @@ a {
   top: 0; }
   .background.World {
     background-color: blue;
-    background-image: url("resources/images/back.png");
+    background-image: url("../resources/images/back.png");
     opacity: 1;
     visibility: visible;
     z-index: -100; }
   .background.Comp {
     background-color: black;
-    background-image: url("resources/images/CompBackgroundTrans.png");
+    background-image: url("../resources/images/CompBackgroundTrans.png");
     z-index: -99; }
   .background.CompToRouter {
     background-color: black;
-    background-image: url("resources/images/CompToRouterBkBlur.png");
+    background-image: url("../resources/images/CompToRouterBkBlur.png");
     z-index: -98; }
   .background.Topologies {
     background-color: black;
-    background-image: url("resources/images/TopologyBackground.png");
+    background-image: url("../resources/images/TopologyBackground.png");
     z-index: -97; }
   .background.IpAddresses {
     background-color: black;
-    background-image: url("resources/images/NatAddressBackground.png");
+    background-image: url("../resources/images/NatAddressBackground.png");
     z-index: -96; }
 
 .popupLink {
@@ -364,18 +364,18 @@ a.tooltipLink {
 .contentItem {
   border-radius: 50%;
   background-color: red;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-width: medium;
   border-color: white;
   border-style: solid;
-  margin: 20px auto;
+  margin: 5px auto;
   transition: width 0.25s, height 0.25s, margin 0.25s;
   cursor: pointer; }
 
 .contentItem:hover {
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   margin: 20px auto; }
 
 #darkenOverlay {

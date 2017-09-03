@@ -2,11 +2,11 @@
  * Created by Hand of Cthulhu on 26/06/17.
  */
 
-﻿/// <reference path="./scripts/typings/globals/jquery/index.d.ts" />
-﻿/// <reference path="./scripts/typings/globals/gsap/index.d.ts" />
-﻿/// <reference path="./scripts/typings/globals/scrollmagic/index.d.ts" />
-﻿/// <reference path="./scripts/typings/globals/jBox/index.d.ts" />
-﻿/// <reference path="./scripts/typings/globals/jqsvg.d.ts" />
+﻿/// <reference path="../scripts/typings/globals/jquery/index.d.ts" />
+﻿/// <reference path="../scripts/typings/globals/gsap/index.d.ts" />
+﻿/// <reference path="../scripts/typings/globals/scrollmagic/index.d.ts" />
+﻿/// <reference path="../scripts/typings/globals/jBox/index.d.ts" />
+﻿/// <reference path="../scripts/typings/globals/jqsvg.d.ts" />
 
 
 //$(".tooltipInner").hide();
@@ -20,6 +20,27 @@ let element = $("<div>", {
 let isAboutToRefresh = false;
 const controller = new ScrollMagic.Controller({});
 
+for (let i = 2; i < slides.length; i++) {
+    let toApp = $("<div class=\"contentItem fadeHolder\"></div>\n");
+    toApp.click(eventObject => {
+        $('html, body').animate({
+            scrollTop: slides.eq(i).offset().top
+        }, 1000);
+    });
+    toApp.attr("title", slides.eq(i).find("h3").text());
+    $("#tableOfContentsMarks").append(toApp);
+    new jBox('Tooltip', {
+        attach: toApp,
+        "theme": "TooltipDark",
+        //content: slides.eq(i).find("h3").text(),
+        pointer: "center",
+        position: {
+            x: 'left',
+            y: 'center'
+        },
+        outside: "x"
+    });
+}
 for (let i = 0; i < slides.length; i++) {
     let addedHeight = 0;
     let currentSection = $(slides[i]);
@@ -68,6 +89,7 @@ for (let i = 0; i < slides.length; i++) {
     }).setPin(slides[i]).addTo(controller);
 
     let children = slides.eq(i).find(".fadeHolder");
+
     if (i == 0) {
         for (let ii = 0; ii < children.length; ii++) {
             let relativeTopPos = children.eq(ii).offset().top - slides.eq(i).offset().top;
@@ -87,6 +109,7 @@ for (let i = 0; i < slides.length; i++) {
         }
         continue;
     }
+
     let tempHolder = element.clone().css({top: $(slides[i]).offset().top + $(window).height() * 0.2 + addedHeight}).appendTo(document.body);
     for (let ii = 0; ii < children.length; ii++) {
         let relativeTopPos = children.eq(ii).offset().top - slides.eq(i).offset().top;
@@ -96,6 +119,7 @@ for (let i = 0; i < slides.length; i++) {
             triggerHook: "onLeave"
         }).setTween(TweenMax.to(children[ii], 1, {y: -((relativeTopPos / $(window).height()) * 400 + 300), autoAlpha: 0})).addTo(controller);
     }
+
 }
 
 // let osiModels = $(".osi");
@@ -164,7 +188,6 @@ function osiAnim() {
         TweenMax.fromTo(elem, 0.75, {autoAlpha: 0.3}, {delay: index * 0.75, repeatDelay: toAnimate.length * 0.75, autoAlpha: 1, repeat: -1, yoyo: true, ease: Power1.easeInOut});
     }));
     $(svgEle).click(eventObject => {
-        console.log("hi");
         let targetModal = $("#osiExp");
         TweenMax.to($("#darkenOverlay"), 0.25, {autoAlpha: 1});
         TweenMax.fromTo(targetModal, 0.25, {scale: 3, autoAlpha: 0, ease: Power4.easeOut}, {scale: 1, autoAlpha: 1});
@@ -250,6 +273,7 @@ function initializeTooltips() {
     });
 
 }
+
 
 let timerVar;
 let refreshCountdownCount;

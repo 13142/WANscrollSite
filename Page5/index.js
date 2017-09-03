@@ -1,11 +1,11 @@
 /**
  * Created by Hand of Cthulhu on 26/06/17.
  */
-/// <reference path="./scripts/typings/globals/jquery/index.d.ts" />
-/// <reference path="./scripts/typings/globals/gsap/index.d.ts" />
-/// <reference path="./scripts/typings/globals/scrollmagic/index.d.ts" />
-/// <reference path="./scripts/typings/globals/jBox/index.d.ts" />
-/// <reference path="./scripts/typings/globals/jqsvg.d.ts" />
+/// <reference path="../scripts/typings/globals/jquery/index.d.ts" />
+/// <reference path="../scripts/typings/globals/gsap/index.d.ts" />
+/// <reference path="../scripts/typings/globals/scrollmagic/index.d.ts" />
+/// <reference path="../scripts/typings/globals/jBox/index.d.ts" />
+/// <reference path="../scripts/typings/globals/jqsvg.d.ts" />
 //$(".tooltipInner").hide();
 initializeTooltips();
 var slides = $("section.panel");
@@ -14,6 +14,30 @@ var element = $("<div>", {
 });
 var isAboutToRefresh = false;
 var controller = new ScrollMagic.Controller({});
+var _loop_1 = function (i) {
+    var toApp = $("<div class=\"contentItem fadeHolder\"></div>\n");
+    toApp.click(function (eventObject) {
+        $('html, body').animate({
+            scrollTop: slides.eq(i).offset().top
+        }, 1000);
+    });
+    toApp.attr("title", slides.eq(i).find("h3").text());
+    $("#tableOfContentsMarks").append(toApp);
+    new jBox('Tooltip', {
+        attach: toApp,
+        "theme": "TooltipDark",
+        //content: slides.eq(i).find("h3").text(),
+        pointer: "center",
+        position: {
+            x: 'left',
+            y: 'center'
+        },
+        outside: "x"
+    });
+};
+for (var i = 2; i < slides.length; i++) {
+    _loop_1(i);
+}
 for (var i = 0; i < slides.length; i++) {
     var addedHeight = 0;
     var currentSection = $(slides[i]);
@@ -144,7 +168,6 @@ function osiAnim() {
         TweenMax.fromTo(elem, 0.75, { autoAlpha: 0.3 }, { delay: index * 0.75, repeatDelay: toAnimate.length * 0.75, autoAlpha: 1, repeat: -1, yoyo: true, ease: Power1.easeInOut });
     }));
     $(svgEle).click(function (eventObject) {
-        console.log("hi");
         var targetModal = $("#osiExp");
         TweenMax.to($("#darkenOverlay"), 0.25, { autoAlpha: 1 });
         TweenMax.fromTo(targetModal, 0.25, { scale: 3, autoAlpha: 0, ease: Power4.easeOut }, { scale: 1, autoAlpha: 1 });
