@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="This scrolling site explains Wide Area Networks">
@@ -94,8 +94,9 @@
         </div>
         <div class="mid-point">
             <h4 class="fadeHolder">Let us start from a single computer, up to connecting the entire internet.</h4>
-            <p class="fadeHolder">Take note of the OSI model on the top right corner of the screen, each technology I mention will have its associated OSI layer highlighted, this
-                will be explained later.</p>
+            <p class="fadeHolder">Take note of the OSI and TCP/IP model on the top right corner of the screen, each technology I mention will have its associated OSI and TCP/IP
+                layer highlighted.
+                Click on it to learn more.</p>
         </div>
         <div class="bot-point">
 
@@ -128,7 +129,7 @@
                 <hr>
             </div>
             <div class="right-side-inner">
-                <img src="resources/images/ethernet-cable.png" style="max-height: 100%; max-width: 100%;">
+                <img alt="Ethernet Cable" src="resources/images/ethernet-cable.png" style="max-height: 100%; max-width: 100%;">
             </div>
         </div>
         <div class="bot-point">
@@ -197,7 +198,6 @@
     <div class="right-side">
     </div>
 </section>
-
 <section class="panel CompToRouterStep osi slidable" data-osiTypes="Physical">
     <div class="left-side shallFlex col">
         <div class="upper-point fadeHolder">
@@ -261,7 +261,8 @@
                 <hr>
             </div>
             <div class="right-side-inner">
-                <object id="switchModel" data="resources/images/Switch.svg" type="image/svg+xml"></object>
+                <video class="video" autoplay loop src="resources/images/Switch.mp4"></video>
+                <!--<object id="switchModel" data="resources/images/Switch.svg" type="image/svg+xml"></object>-->
             </div>
         </div>
         <div class="bot-point">
@@ -306,11 +307,10 @@
     <div class="right-side">
     </div>
 </section>
-
 <section class="panel CompToRouterStep osi slidable" data-osiTypes="DataLink,Network,Transport">
     <div class="left-side shallFlex col">
-        <div class="upper-point fadeHolder">
-            <h3>Miscellaneous</h3>
+        <div class="upper-point">
+            <h3 class="fadeHolder">Miscellaneous</h3>
             <h4 class="fadeHolder">Other devices on a network could include:</h4>
         </div>
 
@@ -345,12 +345,10 @@
                 </div>
                 <div class="slideIn">
                     <hr>
-                    <a class="tooltipLink" data-target="dhcpExp">Bridges</a> LA DA LA DA TODO TODO TODO
-                    <ul>
-                        <li>LA DA LA DA TODO TODO TODO</li>
-                        <li>LA DA LA DA TODO TODO TODO</li>
-                        <li>LA DA LA DA TODO TODO TODO</li>
-                    </ul>
+                    <a class="tooltipLink" data-target="dhcpExp">Bridges</a> Bridges connect 2 LAN networks together into one network. The most common type of bridge is a
+                    transparent bridge, which will seamlessly connect 2 different LAN networks, by combining their router. This means that devices in 2 different networks connected
+                    by a bridge can communicate with each other just like they are in the same network.<br>
+                    There are other more complex bridges that can connect more networks together (e.g. multiport bridges). They act like a switch for networks.
                 </div>
             </div>
             <div class="right-side-inner">
@@ -364,7 +362,7 @@
     <div class="right-side">
     </div>
 </section>
-<section class="panel PhysicalTopologies osi slidable" data-osiTypes="DataLink,Network,Transport">
+<section class="panel PhysicalTopologies osi slidable" data-osiTypes="Physical">
     <div class="left-side shallFlex col">
         <div class="upper-point">
 
@@ -372,21 +370,481 @@
         <div class="mid-point">
             <h2 class="fadeHolder">Physical Network Topologies</h2>
             <h5 class="fadeHolder">Physical topologies are how network devices are physically connected together (either through wires, or through Wifi technologies), it describes
-            which devices any particular device connects to.</h5>
+                which devices any particular device connects to.</h5>
         </div>
     </div>
     <div class="right-side">
     </div>
 </section>
 
-<section class="panel CompToRouterStep osi slidable" data-osiTypes="DataLink,Network,Transport">
+<section class="panel PhysicalTopologiesContent osi slidable" data-osiTypes="Physical">
     <div class="left-side shallFlex col">
-        <div class="upper-point fadeHolder">
-            <h2>Physical Network Topologies</h2>
-            <h4 class="fadeHolder">Physical topologies are how network devices are physically connected together (either through wires, or through Wifi technologies), it describes
-                which devices any particular device connects to.</h4>
+        <div class="upper-point">
+            <h3 class="fadeHolder">Star Topology</h3>
+            <h4 class="fadeHolder">The simplest, and most common physical topology (at least in LAN), is the star topology:
+            </h4>
         </div>
 
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <div class="slideIn">
+                    <hr>
+                    A Central controller (a router or switch in a LAN for example), will connect to all the other devices in the network.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    This method has many many positives:
+                    <ul>
+                        <li>Easy to set up (as long as every device knows who the controller is, every device can just connect to it)</li>
+                        <li>Cheap (you only need controller)</li>
+                        <li>Reliable (There is no complex wiring and connections where bugs and complications can pop up)</li>
+                        <li>And easy to diagnose/maintain (If something is not working there is only ever 2/3 places something can go wrong on the network, the sending device, the
+                            controller, and the receiving device)
+                        </li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    There are disadvantages to this approach however:
+                    <ul>
+                        <li>All the load is placed on the central controller, and since switches can only handle a certain amount of traffic and connections, this method is not
+                            very scalable.
+                        </li>
+                        <li>A lot of traffic on a single point might overload and crash the switch/router.</li>
+                        <li>Reliable (There is no complex wiring and connections where bugs and complications can pop up)</li>
+                        <li>And if/when the switch breaks, because there is a single point of failure, it breaks the entire network.</li>
+                        <li>Each of the connected device only has one connection to the network, which means if the connection breaks, they lose all access to the network</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-side-inner">
+                <object id="starTopologyModel" data="resources/images/Star%20Topology.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
+        <div class="bot-point fadeHolder">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+
+<section class="panel PhysicalTopologiesContent osi slidable" data-osiTypes="Physical">
+    <div class="left-side shallFlex col">
+        <div class="upper-point">
+            <h3 class="fadeHolder">Bus Topology</h3>
+            <h4 class="fadeHolder">The bus topology has a central line where every computer connects to, this topology only applies to wired networks:
+            </h4>
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <div class="slideIn">
+                    <hr>
+                    The advantages of this is:
+                    <ul>
+                        <li>It is easy to add a new device to the network, just attach them onto the end of the line.</li>
+                        <li>Requires much less cable length to set up and maintain, since everything is attached to the center line.</li>
+                        <li>Can be easily extended with a repeater.</li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    The disadvantages are:
+                    <ul>
+                        <li>Similar to the star mesh, if the central line, or any of the T junctions break, then the entire network is now down.</li>
+                        <li>Because all the network devices are connected to one single wire, if 2 different computers want to send data down the bus at the same time, collisions
+                            will happen, and the data will be lost. This can be lessened by using a full duplex so that 2 simultaneous communications is possible.
+                        </li>
+                        <li>Other protocols like tokens can be used to limit who can communicate and when, but then the bandwidth is still significantly reduced.</li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    The bus topology is now rarely used because of these disadvantages
+                </div>
+            </div>
+            <div class="right-side-inner">
+                <object id="busTopologyModel" data="resources/images/BusTopology.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
+        <div class="bot-point fadeHolder">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel PhysicalTopologies osi slidable" data-osiTypes="Physical">
+    <div class="left-side shallFlex col">
+        <div class="upper-point">
+
+        </div>
+        <div class="mid-point">
+            <h2 class="fadeHolder">Ring</h2>
+            <h5 class="fadeHolder">I am going to skip over ring topology, as it is a bit complicated and beyond the scope of this webpage, here is a
+                <a href="http://www.ianswer4u.com/2011/05/ring-topology-advantages-and.html" target="_blank">good link</a> to where you can learn more about it.
+            </h5>
+
+            <object class="fadeHolder" style="height: 50%" id="ringTopologyModel" data="resources/images/RingTopology.svg" type="images/svg+xml"></object>
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel PhysicalTopologiesContent osi slidable" data-osiTypes="Physical">
+    <div class="left-side shallFlex col">
+        <div class="upper-point">
+            <h3 class="fadeHolder">Mesh topology</h3>
+            <h4 class="fadeHolder">The final common topology, and also the most common topology for WANs (including the internet), is the mesh topology.
+            </h4>
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <div class="slideIn">
+                    <hr>
+                    The mesh topology basically means a free for all where everything can connect to everything, creating a “mesh” like net of connections. Because
+                    of the many connections that a mesh topology, even if a lot of connections break in a WAN, there almost always still enough connections left that the entire
+                    network still functions.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    The advantages of this is:
+                    <ul>
+                        <li>Up to infinite redundancy.</li>
+                        <li>With the correct routing protocols (which will be explained later), the fastest route can be chosen in the network.</li>
+                        <li>No central point that all traffic has to go through</li>
+                        <li>No predefined structure that anyone has to follow</li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    The disadvantages are that because everything can connect to everything, things get complicated:
+                    <ul>
+                        <li>Hard to setup</li>
+                        <li>Hard to maintain</li>
+                        <li>Difficult to add new items to the network</li>
+                        <li>No predefined path to follow to get data from A to B</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bot-point fadeHolder">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+
+<section class="panel Routing osi slidable" data-osiTypes="Network">
+    <div class="left-side shallFlex col">
+        <div class="upper-point">
+
+        </div>
+        <div class="mid-point">
+            <h2 class="fadeHolder">Routing</h2>
+            <p class="fadeHolder"> Since WAN networks are mostly connected with mesh topologies, there are generally no predefined path through the network. This is where routing
+                comes in. Routing defines the route that any network packet will take from one LAN network to another LAN network in the WAN. There are two different ways of
+                setting up routes.
+            </p>
+            <!--<object class="fadeHolder" style="height: 50%" id="ringTopologyModel" data="resources/images/RingTopology.svg" type="images/svg+xml"></object>-->
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+
+<section class="panel RoutingContent osi slidable" data-osiTypes="Network">
+    <div class="left-side shallFlex col">
+        <div class="upper-point ">
+            <h3 class="fadeHolder">Routing</h3>
+            <!--<h4 class="fadeHolder">The final common topology, and also the most common topology for WANs (including the internet), is the mesh topology.-->
+            <!--</h4>-->
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+
+                <div class="slideIn">
+                    <hr>
+                    <h4>Static Routing:</h4>
+                </div>
+                <div class="slideIn">
+                    <ul>
+                        <li> In static routing, the administrator of the network manually sets routes between 2 different points, specifying which nodes to go to to reach the
+                            destination.
+                        </li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    <h4>Dynamic Routing:</h4>
+                </div>
+                <div class="slideIn">
+                    <ul>
+                        <li>This type of routing is what normally happens, where the computer automatically generates best route between different nodes by using specific
+                            algorithms set by the administrator.
+                        </li>
+                        <li>Dynamic routing algorithms mainly use <a class="tooltipLink" data-target="hopCountExp">Hop Count</a> and
+                            <a class="tooltipLink" data-target="tickCountExp">Tick Count</a> to measure the best route to take (to minimize distance).
+                        </li>
+                        <li>Each routing protocol has to describe how it measures the shortest distance, how it distributes its measurements, and how it deals with common problems
+                            like <a class="popupLink" data-target="routingLoopsExp">routing loops</a>.
+                        </li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    <h4>Dynamic Routing Protocols</h4>
+                    <hr>
+                    Routing Information Protocols (RIP):
+                    <ul>
+                        <li>The RIP protocol simply counts the number of hops to reach each destination and chooses the the route with the lowest hop count.</li>
+                        <li> This way of measuring speed has the advantages of being easy to calculate, but doesn’t always accurately reflect speed, as different hops can have
+                            vastly differing speeds.
+                        </li>
+                        <li>It deals with routing loops problem by storing how many hops it has currently calculated, and cutting it off when the hop count goes over 15, and
+                            storing the distance as infinite.
+                        </li>
+                        <li> Every 30 seconds, every router that has their routing tables changed sends their entire routing table to everybody else through
+                            <a href="http://www.tcpipguide.com/free/t_IPMulticastAddressing.htm" target="_blank">multicast address</a> (RIPv2).
+                        </li>
+                        <li>The RIP protocol has now been mostly retired in favour of the newer OSPF protocol.</li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    Open Shortest Path First (OSPF):
+                    <ul>
+                        <li> The OSPF algorithm will only send the changed part of their routing tables, and sends the change to relevant routers (through multicast address) when
+                            it takes place.
+                        </li>
+                        <li> OSPF sets a weighted value for each path depending on the metrics like the time it takes for a packet to travel along that path.
+                        </li>
+                        <li>Then when counting how long a path is, rather than just counting each hop as one distance unit like RIP, OSPF adds the weighted path value onto its
+                            distance.
+                        </li>
+                        <li>This means that multiple short hops might be chosen over a single long hop.</li>
+                        <li>OSPF is currently the most widely used routing protocol.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bot-point fadeHolder">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel IpAddresses osi slidable" data-osiTypes="Network">
+    <div class="left-side shallFlex col">
+        <div class="upper-point ">
+            <h3 class="fadeHolder">Ip Addresses</h3>
+            <h4 class="fadeHolder">Ip addresses has a similar purpose as MAC addresses, as identifiers of devices connected to the network, however, it is not permanent, nor is it
+                guaranteed to be unique</h4>
+
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <div class="slideIn">
+                    <hr>
+                    Each router has a public IP that is visible to the bigger WAN network the router is connected to, and an internal IP, which is what is visible to every
+                    component in the internal LAN network that the router is connected to.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    For public addresses, the ISP (Internet service provider) will normally provide you with a dynamic IP address. This IP will generally change every time the
+                    router is restarted.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    For private addresses, the router will normally assign every device their own ip using dhcp. There are some rules/settings that can be set by the administrator.
+                    These rules can include:
+                    <ul>
+                        <li>Choosing the range of IP addresses that the router can assign to devices</li>
+                        <li>Exclude specific ip addresses from being assigned</li>
+                        <li>Configuring the <a class="popupLink" data-target="subnetMaskExp">subnet masks</a></li>
+                        <li>Set the <a class="tooltipLink" data-target="leaseTimeExp">lease time</a> for each ip</li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    The private addresses can be set to static by making the device request a specific address from the router.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    Private addresses can be used as identifiers within a network, when one computer needs to access data from another computer within the same
+                    network, only the private ip needs to be used (sometimes just the MAC address of the individual network device is required).
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    To send data to devices outside the network, private addresses will have to be converted to public addresses by the router through a process
+                    called <a class="tooltipLink" data-target="NatExp">NAT</a>.
+                    When communicating to devices outside the network, <a class="tooltipLink" data-target="NatExp">NAT</a> makes all the devices within a network appear to have the
+                    same public IP (the router's public IP).
+                    <a class="tooltipLink" data-target="NatExp">NAT</a> improves network security by making allowing each computer to not connect directly to the bigger WAN network
+                    (usually the internet), but through the router
+                    and its firewall.
+                </div>
+            </div>
+            <div class="right-side-inner">
+                <object id="NatModel" data="resources/images/NatAddressTransition.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
+        <div class="bot-point fadeHolder">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+<section class="panel IpAddresses osi slidable" data-osiTypes="DataLink">
+    <div class="left-side shallFlex col">
+        <div class="upper-point ">
+            <h3 class="fadeHolder">WAN protocols</h3>
+            <h4 class="fadeHolder">To connect to a WAN, most commonly the internet, several WAN protocols has been introduced and improved upon over the years.</h4>
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <div class="slideIn">
+                    <hr>
+                    WAN protocol graveyard (Not used all that commonly anymore, I am just going to gloss over these):
+                    <ul>
+                        <li>Frame Relay, low cost, super slow (up to 64kbps (that's kilobits, not even bytes)) connection, rarely used now.</li>
+                        <li>Point to Point Protocol (PPP), used mainly for dial-up internet, though newer variation has been developed like <a class="tooltipLink"
+                                                                                                                                               data-target="PppoeExp">PPPoE</a>.
+                        </li>
+                        <li>X.25, this protocol governs the Physical, Data link, and Network layers in the OSI model. While still used somewhat in some countries (e.g. France), it
+                            has now been mainly replaced by IP protocols for the network layer, and Ethernet for its data link and physical layers.
+                        </li>
+                        <li> ATM (Asynchronous Transfer Mode): Seems to be mostly superseded by the IP protocol, out of time to research this one properly, so here’s the link to
+                            the <a href="https://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode" target="_blank">wikipedia page</a>:
+                        </li>
+                    </ul>
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    The most common WAN protocol used now is the broadband protocol, and the
+                    standard broadband protocol is DSL , which stands for digital subscriber line. This technology is popular because it allows the use of pre existing telephone
+                    lines to transfer data (Caution: DSL is not dial-up, it is much faster and allows for telephone ).
+
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    The most popular DSL protocol is ADSL, which is, until recently, one of the best ways to connect to the internet for home users. The A in ADSL stands for
+                    asymmetric, and it is there because the ADSL standard does not give the same speed and bandwidth for upload and download. Most users will be downloading much
+                    more than they will be uploading. Therefore, it seems logical to take some bandwidth from upload speeds, giving them to the download speeds.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    Another DSL protocol is SDSL: Which just stands for symmetric DSL, and as the name would suggest, it just means that upload bandwidth and download bandwidth are
+                    the same. This is less useful for home users, but for specific cases (e.g. servers) that could use the extra upload speed, this would increase performance.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    The third DSL protocol is VDSL, standing for Very-high-bit-rate DSL, there are many versions of this protocol: VDSL, VDSL2, VDSL2-VPlus: Each version increases
+                    speed. However, while this is an improvement on the ADSL protocol, before this standard became widespread, the next standard in this list came along: Optical
+                    Fibre.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    SONET (Synchronous Optical Networking): This technology uses optical fibre to transfer a lot of data simultaneously over a long distance, typically between
+                    ISPs.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    After some modification, fibre optic technology are now used to deliver data from the internet on “last mile” from your ISP to your house. It can now connect
+                    directly to your house through FTTH (Fibre-to-the-home), giving almost full fibre optic speed. Other “Fibre-to-the-X” include FTT Block, FTT curb, and FTT Node.
+                    See diagram on the right.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    Ethernet is a widely applicable technology to transmit data over wire. Ethernet is used mainly in LAN networks as a reliable way to transmit data over a short
+                    distance. Ethernet is only really used in WAN networks in locations like switches where they only need to travel over a short distance, this is because of the
+                    signal degradation that Ethernet wire experiences over medium to long distances.
+                </div>
+            </div>
+            <div class="right-side-inner">
+                <object id="FttxModel" data="resources/images/FTTX.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
+        <div class="bot-point fadeHolder">
+
+        </div>
+    </div>
+    <div class="right-side">
+    </div>
+</section>
+
+<section class="panel IpAddresses osi slidable" data-osiTypes="DataLink,Network,Transport">
+    <div class="left-side shallFlex col">
+        <div class="upper-point ">
+            <h3 class="fadeHolder">TCP / IP</h3>
+            <h4 class="fadeHolder">TCP / IP stands for Transmission control protocol / Internet protocol. This protocol is made to organise data in a way so that it can be
+                transferred over the internet to the correct location without too much hassle.</h4>
+        </div>
+
+        <div class="mid-point shallFlex row fadeHolder">
+            <div class="left-side-inner">
+                <div class="slideIn">
+                    <hr>
+                    Data is arranged in a packet/frame system (see diagram on the right). Each frame contains a header and the content/payload. The header includes information like
+                    the destination IP address and other metadata (e.g. source IP address, TTL (Time To Live), version used...etc. ). This packet is then passed to its destination
+                    through routing protocols discussed above.
+
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    There are two different IP versions currently, the “old” IPv4, which uses a 32 bit address space to store IP’s, resulting in a bit over 4 billion unique IP’s.
+                    This is nowhere near enough for each device to have it’s own unique IP. Solutions like NAT (explained above) was used so that an entire LAN will only take up 1
+                    address. Dynamic addressing is also used so that addresses can be taken back when no longer needed.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    Then there is the “new” IPv6 protocol, which was formalized all the way back in 1998. This “new” protocol uses 128 bit addresses, which means
+                    there is enough addresses for every star in the observable universe to get 100 trillion addresses EACH. This new addressing system will solve a lot of problems
+                    involving not having enough IP addresses.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    While people have been trying to push the new IPv6 protocol for almost 20 years now, we are still using the old system. Because humans.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    IP protocol is a connectionless protocol. This means that there is no need to set up a personal route/connection between you and the
+                    destination before you can transmit data. Each packet contains the information that it needs to get to its destination. This results in less extraneous data and
+                    infrastructure to be setup before communication can begin.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    However, this means that IP is not an 100% reliable method of transmitting data. Errors can occur e.g. Packet loss, the data in the payload can
+                    be corrupted, packets can get out of order (since its connectionless, every packet is managed independently).
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    This is where TCP comes in. TCP checks each packet with its checksum, reorders the arriving packets into order, and sends a request for the
+                    packets it lost or got corrupted. This way TCP makes the transmission reliable.
+                </div>
+                <div class="slideIn">
+                    <hr>
+                    Side note: <a class="popupLink" data-target="UdpExp">UDP</a>
+                    <hr>
+                </div>
+            </div>
+            <div class="right-side-inner">
+                <object id="TcpIpModel" data="resources/images/IPModel.svg" type="image/svg+xml"></object>
+
+            </div>
+        </div>
+        <div class="bot-point fadeHolder">
+
+        </div>
     </div>
     <div class="right-side">
     </div>
@@ -396,10 +854,12 @@
 <div class="background World"></div>
 <div class="background Comp"></div>
 <div class="background CompToRouter"></div>
+<div class="background Topologies"></div>
+<div class="background IpAddresses"></div>
 <!--Popups-->
-<section>
+<div>
     <div class="popupInner" id="lanExp">
-        <div class="linedHeader">LAN --> Local Area Network</div>
+        <div class="linedHeader">LAN --&gt; Local Area Network</div>
         A LAN consists of a group of <a class="tooltipLink" data-target="networkDevicesExamples">network capable devices</a> that connects together in a
         <a class="tooltipLink" data-target="smallAreaExamples">relatively small area</a>. Most LANs usually connect to a router that manages the communication between the localized
         LAN network, and the bigger WAN network the LAN is connected to. Wi-fi, and Ethernet is usually used to connect devices together in a LAN.
@@ -411,10 +871,86 @@
         </div>
     </div>
     <div class="popupInner" id="macExp">
-        <div class="linedHeader">MAC --> Media Access Control</div>
+        <div class="linedHeader">MAC --&gt; Media Access Control</div>
         MAC addresses are an unique identifier on every network capable product, specifically on the network interface card. It is made up of 6 pairs of hexadecimal digits (6
-        bytes), which is a total of 48 bits. E.g. 5B:4D:77:19:F0:BA, this allows for 2^48 combinations ( < 281 trillion). Manufacturers of network cards also try to make sure that
+        bytes), which is a total of 48 bits. E.g. 5B:4D:77:19:F0:BA, this allows for 2^48 combinations ( &lt; 281 trillion). Manufacturers of network cards also try to make sure
+        that
         every product they produce has a unique MAC address.
+    </div>
+    <div class="popupInner" id="osiExp" style="font-size: 13pt; font-weight: 200;">
+        <div class="linedHeader">OSI --&gt; Open System Interconnection</div>
+        OSI Model is just a list of "layers" that groups networking protocols into 7 categories.
+        <ul>
+            <li><b>Physical Layer</b>:
+                <ul>
+                    <li>The hardware layer.</li>
+                    <li>Objects that manipulate base electronic signals</li>
+                    <li>Things like hubs and repeaters goes here</li>
+                    <li>Protocols can include Ethernet</li>
+                </ul>
+            </li>
+            <li><b>Data Link Layer</b>
+                <ul>
+                    <li>Converts the electric signals in the hardware layers to computer bits that can be processed by the network layer</li>
+                    <li>Some error correction happens here</li>
+                    <li>MAC addresses are part of the Data Link layer</li>
+                    <li>Switches work at this layer</li>
+                </ul>
+            </li>
+            <li><b>Network Layer</b>
+                <ul>
+                    <li>Routing and routing protocols work here</li>
+                    <li>Routers work at this layer</li>
+                    <li>TCP/IP and other network protocols work at this layer</li>
+                </ul>
+            </li>
+            <li><b>Transport Layer</b>
+                <ul>
+                    <li>TCP and UDP protocols work at this layer</li>
+                    <li>End to end error checking and correction</li>
+                </ul>
+            </li>
+            <li><b>Session Layer</b>
+                <ul>
+                    <li>Sets up and maintains communications of applications</li>
+                    <li>As the name implies, creates sessions for applications to use</li>
+                </ul>
+            </li>
+            <li><b>Presentation Layer</b>
+                <ul>
+                    <li>Sorts and organized the data to display it onto your screen</li>
+                    <li>Encryptions and decryptions of protocols like HTTPS happens here</li>
+                    <li>Makes text appear as text, makes images appear as images, and videos as videos...etc.</li>
+                </ul>
+            </li>
+            <li><b>Application Layer</b>
+                <ul>
+                    <li>What you interact with</li>
+                    <li>The software services like email, RSS, FTP, SSH... etc.</li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </div>
+    <div class="popupInner" id="UdpExp">
+        <div class="linedHeader">UDP --&gt; User Datagram Protocol</div>
+        UDP is basically TCP/IP without the TCP part. UDP just blasts packets to the receiver
+        without ever checking if any of them actually got there. UDP relies on the plain internet protocol to get most of the packets there in roughly the right order.
+        UDP is mainly used in voice calling, video streaming…etc. where perfect transmission is not usually required, but speed and low latency is what is important.)
+    </div>
+    <div class="popupInner" id="subnetMaskExp">
+        <div class="linedHeader">Subnet Masks</div>
+        <p>Subnet masks allow the administrator to arrange ip’s in a way so that there can be multiple smaller LAN networks inside a WAN or MAN.
+            The subnet mask itself is a 32 bit binary number that “masks” the actual ip address, this is done by converting the ip address to binary, and then overlaying
+            the subnet mask over it. The parts covered by 1are the network addresses, and the parts covered by 0’s are the host addresses.</p>
+        <object id="subnetMaskModel" data="resources/images/SubnetMask.svg" type="images/svg+xml"></object>
+        <p>
+            In the example above, the range of hosts is 256 (0 - 255), and the network range is 256 * 256 * 256 = 16777216.
+            One more thing to note is that the first and last host address (0 and 255) are the <a class="tooltipLink" data-target="broadcastExp">broadcast address</a> and the <a
+                href="http://www.tcpipguide.com/free/t_IPMulticastAddressing.htm" target="_blank">multicast address</a> respectively. This means the actual number of usable hosts
+            is only 254 (256 - 2).
+        </p>
     </div>
     <div class="popupInner" id="comTypeExp">
         <div class="linedHeader">Simplex, Half-Duplex, and Full-Duplex</div>
@@ -425,14 +961,51 @@
         Half duplex only allows for communications in one direction at once. The receiver must wait for a “over” message before sending out their own message. 802.11 Wifi is an
         example of half duplex communication.
     </div>
-</section>
+
+    <div class="popupInner" id="routingLoopsExp">
+        <div class="linedHeader">Routing Loops</div>
+        <h5>Routing loops are infinite loops created when one of the routes goes down.</h5>
+        Look at the example on the below:<br>
+        <p>
+            Normally when A needs to go to C, it will use the route through B because 2 (distance from A - B) + 3 (distance from B - C) is smaller than 14 (Distance directly from A
+            - C (imagine a satellite connection). This works perfectly fine until the connection between B-C breaks.
+            When that connection breaks, A wouldn’t know about it, and still send its packets to B. When B receives it, it knows that the connection between itself and C is broken,
+            functionally making the distance to C directly from B infinite. This means that B will try the other route to C, back through A (since 14 + 2 is smaller than infinity),
+            thus creating a loop.</p>
+        <video class="video" src="resources/images/RoutingLoops2.mp4" autoplay loop></video>
+    </div>
+
+    <div class="popupInner" id="refreshPopup">
+        <div class="linedHeader">Window resize detected!!</div>
+        <h4>Refreshing in <span id="refreshCountDown">3</span></h4>
+    </div>
+</div>
 
 <!--Tooltips-->
-<section>
+<div>
     <div class="tooltipInner" id="manExp">
         <b>MAN</b> stands for <b>Metropolitan Area Network</b>
         <hr>
         MAN's normally consists of a few LAN's, similar to WAN, but cover a much more localized area, ranging from a school to a city.
+    </div>
+    <div class="tooltipInner" id="hopCountExp">
+        This metric describes the number of different nodes (switches, routers, servers...etc), that the information has to pass through before reaching the destination
+    </div>
+    <div class="tooltipInner" id="PppoeExp">
+        Point to Point over Ethernet
+    </div>
+    <div class="tooltipInner" id="leaseTimeExp">
+        This is just the longest time for a device to be disconnected from the network before the ip is taken back to the pool, and the
+        device will be assigned a new ip address the next time it connects.
+    </div>
+    <div class="tooltipInner" id="tickCountExp">
+        This is just a fancy term for measuring the real world time it takes to reach from origin to destination in ticks (1/18th of a second)
+    </div>
+    <div class="tooltipInner" id="NatExp">
+        NAT stands for Network Address Transition
+    </div>
+    <div class="tooltipInner" id="broadcastExp">
+        Sending to the broadcast address means sending information to everyone on the network.
     </div>
     <div class="tooltipInner" id="fwIdentifiers">
         Possible identifiers for different traffic:
@@ -459,11 +1032,6 @@
             <li>Restrict speed</li>
         </ul>
     </div>
-    <div class="tooltipInner" id="leaseTimeExp">
-        This is just the longest time for a device to be disconnected from the network before the ip is taken back to the pool, <br>and the device will be assigned a new ip address
-        the
-        next time it connects
-    </div>
     <div class="tooltipInner" id="dhcpExp">
         <b>DHCP</b> stands for <b>Dynamic Host Configuration Protocol</b>
     </div>
@@ -475,10 +1043,12 @@
         <hr>
         ISPs provides the connection from your LAN or MAN to the internet.
     </div>
-</section>
-
+</div>
+<a href="SecondaryPages/Page1.html">
+    <div class="button" id="exitPageBtn">Go to Page 1</div>
+</a>
 <div id="darkenOverlay"></div>
-</body>
+
 <script src="resources/scripts/jquery.svg.es5.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
@@ -487,4 +1057,6 @@
 <script src="resources/jBox/jBox.js"></script>
 <script src="resources/scripts/jquery.fontface.js"></script>
 <script src="index.js"></script>
+</body>
+
 </html>

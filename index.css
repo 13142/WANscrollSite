@@ -117,7 +117,7 @@ p {
     .panel.tableOfContents .left-side {
       flex: 1 0 auto; }
     .panel.tableOfContents .right-side {
-      flex: 1 1 50%; }
+      flex: 0.5 1 50%; }
     .panel.tableOfContents .upper-point {
       flex: 0 1 40%; }
     .panel.tableOfContents .mid-point {
@@ -125,7 +125,7 @@ p {
     .panel.tableOfContents .bot-point {
       flex: 1 1 auto; }
     .panel.tableOfContents .mid-side {
-      flex: 0 0 40%; }
+      flex: 0 1 80%; }
   .panel.wanDefP01 {
     background: none; }
     .panel.wanDefP01 .left-side {
@@ -176,7 +176,7 @@ p {
   .panel.CompToRouterStep .left-side {
     flex: 0 1 auto; }
   .panel.CompToRouterStep .right-side {
-    flex: 1 1 10%; }
+    flex: 1 1 20%; }
   .panel.CompToRouterStep .upper-point {
     flex: 0 1 15%; }
   .panel.CompToRouterStep .mid-point {
@@ -197,6 +197,71 @@ p {
   .panel.PhysicalTopologies .mid-point {
     flex: 0 0 50vh;
     max-width: 100%; }
+  .panel.PhysicalTopologiesContent .left-side {
+    flex: 0 1 auto; }
+  .panel.PhysicalTopologiesContent .right-side {
+    flex: 1 1 20%; }
+  .panel.PhysicalTopologiesContent .upper-point {
+    flex: 0 1 15%; }
+  .panel.PhysicalTopologiesContent .mid-point {
+    margin-left: 15%;
+    max-height: 50vh;
+    flex: 0 0 50vh; }
+    .panel.PhysicalTopologiesContent .mid-point .left-side-inner {
+      padding: 0 20px;
+      border-left: white solid medium;
+      border-right: white solid medium;
+      flex: 0 0 50%; }
+    .panel.PhysicalTopologiesContent .mid-point .right-side-inner {
+      flex: 1 1 auto; }
+  .panel.Routing .upper-point {
+    flex-basis: 10%; }
+  .panel.Routing .mid-point {
+    width: 50%; }
+  .panel.RoutingContent .left-side {
+    flex: 0 1 auto; }
+  .panel.RoutingContent .right-side {
+    flex: 1 1 10%; }
+  .panel.RoutingContent .upper-point {
+    flex: 0 1 15%; }
+  .panel.RoutingContent .mid-point {
+    margin-left: 10%;
+    max-height: 50vh;
+    flex: 0 0 50vh; }
+    .panel.RoutingContent .mid-point .left-side-inner {
+      padding: 0 20px;
+      border-left: white solid medium;
+      border-right: white solid medium;
+      flex: 0 0 50%; }
+    .panel.RoutingContent .mid-point .right-side-inner {
+      flex: 1 1 auto; }
+  .panel.RoutingContent .left-side-inner {
+    flex-basis: 80% !important; }
+  .panel.IpAddresses .left-side {
+    flex: 0 1 auto; }
+  .panel.IpAddresses .right-side {
+    flex: 1 1 20%; }
+  .panel.IpAddresses .upper-point {
+    flex: 0 1 15%; }
+  .panel.IpAddresses .mid-point {
+    margin-left: 20%;
+    max-height: 50vh;
+    flex: 0 0 50vh; }
+    .panel.IpAddresses .mid-point .left-side-inner {
+      padding: 0 20px;
+      border-left: white solid medium;
+      border-right: white solid medium;
+      flex: 0 0 50%; }
+    .panel.IpAddresses .mid-point .right-side-inner {
+      flex: 1 1 auto; }
+  .panel.IpAddresses h4 {
+    font-size: 16pt; }
+
+.video {
+  margin-left: 10px;
+  border: solid white thick;
+  width: calc(100% - 10px);
+  height: auto; }
 
 #osiModel {
   visibility: hidden;
@@ -209,6 +274,22 @@ p {
 
 a {
   color: red; }
+
+.button {
+  position: fixed;
+  top: 2.5%;
+  left: 2.5%;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #030c8d;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  border: thin blue solid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .background {
   background-size: cover;
@@ -236,6 +317,14 @@ a {
     background-color: black;
     background-image: url("resources/images/CompToRouterBkBlur.png");
     z-index: -98; }
+  .background.Topologies {
+    background-color: black;
+    background-image: url("resources/images/TopologyBackground.png");
+    z-index: -97; }
+  .background.IpAddresses {
+    background-color: black;
+    background-image: url("resources/images/NatAddressBackground.png");
+    z-index: -96; }
 
 .popupLink {
   border-bottom: dotted 2px white;
@@ -323,6 +412,10 @@ a.tooltipLink {
     padding: 25px 50px;
     font-size: 20pt;
     font-weight: normal; }
+
+#refreshPopup {
+  background-color: #ee2927;
+  text-align: center; }
 
 .fa.chevron-down {
   border: solid white;

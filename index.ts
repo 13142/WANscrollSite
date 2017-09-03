@@ -17,7 +17,7 @@ let slides = $("section.panel");
 let element = $("<div>", {
     "class": "tempHolder",
 });
-
+let isAboutToRefresh = false;
 const controller = new ScrollMagic.Controller({});
 
 for (let i = 0; i < slides.length; i++) {
@@ -39,11 +39,9 @@ for (let i = 0; i < slides.length; i++) {
                 throw "Inner item bigger than container";
             }
             aggregrateHeight += heightToAdd;
-            console.log(aggregrateHeight);
             while (aggregrateHeight > maxHeight) {
                 aggregrateHeight -= innerSlides.eq(topOfTheStack).height();
                 toDoLine.to(innerSlides[topOfTheStack], 0.5, {overflow: "hidden", height: 0, ease: Power2.easeInOut}, 0);
-                console.log("does this run?");
                 topOfTheStack++;
             }
 
@@ -77,8 +75,15 @@ for (let i = 0; i < slides.length; i++) {
                 triggerElement: slides[i],
                 duration: "100%",
                 triggerHook: "onLeave"
-            }).setTween(TweenMax.to(children[ii], 1, {y: -((relativeTopPos / $(window).height()) * 400 + 300), opacity: 0})).addTo(controller);
-            //console.log(children[ii]);
+            }).setTween(TweenMax.to(children[ii], 1, {
+                y: -((relativeTopPos / $(window).height()) * 400 + 300),
+                opacity: 0
+            })).addTo(controller);
+            new ScrollMagic.Scene({
+                triggerElement: slides[i],
+                duration: "100%",
+                triggerHook: "onLeave"
+            }).setTween(TweenMax.to($("#exitPageBtn"), 1, {autoAlpha: 0})).addTo(controller);
         }
         continue;
     }
@@ -90,7 +95,6 @@ for (let i = 0; i < slides.length; i++) {
             duration: "100%",
             triggerHook: "onLeave"
         }).setTween(TweenMax.to(children[ii], 1, {y: -((relativeTopPos / $(window).height()) * 400 + 300), autoAlpha: 0})).addTo(controller);
-        //console.log(children[ii]);
     }
 }
 
@@ -125,6 +129,7 @@ function osiModelLights(event) {
         TweenMax.to($("#" + osiTcpRelationship[osiTypes[i]], svgEle), 1, {autoAlpha: 1});
         TweenMax.to($("#" + osiTypes[i] + "Layer", svgEle), 1, {autoAlpha: 1});
     }
+
 }
 
 new ScrollMagic.Scene({
@@ -142,12 +147,29 @@ new ScrollMagic.Scene({
     triggerHook: "onCenter"
 }).setTween(TweenMax.to($(".background.CompToRouter"), 0.5, {autoAlpha: 1})).on("enter", startHubTimeline).addTo(controller);
 
+new ScrollMagic.Scene({
+    triggerElement: $("section.PhysicalTopologies")[0],
+    triggerHook: "onCenter"
+}).setTween(TweenMax.to($(".background.Topologies"), 0.5, {autoAlpha: 1})).addTo(controller);
+
+new ScrollMagic.Scene({
+    triggerElement: $("section.IpAddresses")[0],
+    triggerHook: "onCenter"
+}).setTween(TweenMax.to($(".background.IpAddresses"), 0.5, {autoAlpha: 1})).addTo(controller);
+
 function osiAnim() {
     let svgEle = $("#osiModel")[0]["contentDocument"].documentElement;
     let toAnimate = $(svgEle).children().children("g");
     toAnimate.each(((index, elem) => {
         TweenMax.fromTo(elem, 0.75, {autoAlpha: 0.3}, {delay: index * 0.75, repeatDelay: toAnimate.length * 0.75, autoAlpha: 1, repeat: -1, yoyo: true, ease: Power1.easeInOut});
     }));
+    $(svgEle).click(eventObject => {
+        console.log("hi");
+        let targetModal = $("#osiExp");
+        TweenMax.to($("#darkenOverlay"), 0.25, {autoAlpha: 1});
+        TweenMax.fromTo(targetModal, 0.25, {scale: 3, autoAlpha: 0, ease: Power4.easeOut}, {scale: 1, autoAlpha: 1});
+        $(document.body).addClass("modalOpen");
+    });
 }
 
 function osiAnimEnd() {
@@ -165,8 +187,7 @@ $("a.popupLink").click(eventObject => {
 });
 
 $("#darkenOverlay").click(eventObject => {
-    if ($(eventObject.delegateTarget).css("opacity") === "1") {
-
+    if ($(eventObject.delegateTarget).css("opacity") === "1" && !isAboutToRefresh) {
         TweenMax.to($("#darkenOverlay"), 0.25, {autoAlpha: 0});
         TweenMax.to($(".popupInner"), 0.25, {scale: 3, autoAlpha: 0, ease: Power1.easeOut});
         $(document.body).removeClass("modalOpen");
@@ -228,4 +249,30 @@ function initializeTooltips() {
         });
     });
 
+}
+
+let timerVar;
+let refreshCountdownCount;
+$(window).on("resize", eventObject => {
+    if (!isAboutToRefresh) {
+        isAboutToRefresh = true;
+        let targetModal = $("#refreshPopup");
+        TweenMax.to($("#darkenOverlay"), 0.25, {autoAlpha: 1});
+        TweenMax.fromTo(targetModal, 0.25, {scale: 3, autoAlpha: 0, ease: Power4.easeOut}, {scale: 1, autoAlpha: 1});
+        $(document.body).addClass("modalOpen");
+    }
+    clearInterval(timerVar);
+    refreshCountdownCount = 3;
+    refreshTimer();
+    timerVar = setInterval(refreshTimer, 1000);
+});
+
+function refreshTimer() {
+
+    $("#refreshCountDown").text(refreshCountdownCount);
+    if (refreshCountdownCount <= 0) {
+        clearInterval(timerVar);
+        window.location.reload(true);
+    }
+    refreshCountdownCount--;
 }
