@@ -112,10 +112,9 @@ p {
   }
 }
 
-@mixin StandardSetup($leftOffset: 20%, $rightsize: 20%) {
+@mixin StandardSetup($leftOffset: 12%, $rightsize: 20%) {
   .left-side {
     flex: 0 1 auto;
-
   }
 
   .right-side {
@@ -125,7 +124,6 @@ p {
     flex: 0 1 15%;
   }
   .mid-point {
-
     margin-left: $leftOffset;
 
     max-height: 50vh;
@@ -289,7 +287,7 @@ p {
     }
     .mid-point {
 
-      margin-left: 20%;
+      margin-left: 12%;
 
       flex: 0 0 50vh;
       max-height: 50vh;
@@ -431,9 +429,16 @@ a {
 }
 
 .popupLink {
-  border-bottom: dotted 2px white;
+  border: dotted 2px red;
   cursor: pointer;
+  padding: 0 2px;
   outline: 1px red;
+  background-color: transparentize(red, 0.75);
+  transition: background-color 0.15s;
+}
+
+.popupLink:hover {
+  background-color: transparentize(red, 0.5);
 }
 
 .tooltipInner {
@@ -475,8 +480,8 @@ a {
 }
 
 a.tooltipLink {
-  color: lightcoral;
-  -webkit-text-stroke: 1px white;
+  color: #9cdcff;
+  font-size: 120%;
   position: relative;
 }
 

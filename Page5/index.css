@@ -163,7 +163,7 @@ p {
   .panel.firstSteps .upper-point {
     flex: 0 1 15%; }
   .panel.firstSteps .mid-point {
-    margin-left: 20%;
+    margin-left: 12%;
     flex: 0 0 50vh;
     max-height: 50vh; }
     .panel.firstSteps .mid-point .left-side-inner {
@@ -180,7 +180,7 @@ p {
   .panel.CompToRouterStep .upper-point {
     flex: 0 1 15%; }
   .panel.CompToRouterStep .mid-point {
-    margin-left: 20%;
+    margin-left: 12%;
     max-height: 50vh;
     flex: 0 0 50vh; }
     .panel.CompToRouterStep .mid-point .left-side-inner {
@@ -244,7 +244,7 @@ p {
   .panel.IpAddresses .upper-point {
     flex: 0 1 15%; }
   .panel.IpAddresses .mid-point {
-    margin-left: 20%;
+    margin-left: 12%;
     max-height: 50vh;
     flex: 0 0 50vh; }
     .panel.IpAddresses .mid-point .left-side-inner {
@@ -327,9 +327,15 @@ a {
     z-index: -96; }
 
 .popupLink {
-  border-bottom: dotted 2px white;
+  border: dotted 2px red;
   cursor: pointer;
-  outline: 1px red; }
+  padding: 0 2px;
+  outline: 1px red;
+  background-color: rgba(255, 0, 0, 0.25);
+  transition: background-color 0.15s; }
+
+.popupLink:hover {
+  background-color: rgba(255, 0, 0, 0.5); }
 
 .tooltipInner {
   display: none;
@@ -357,8 +363,8 @@ a {
     font-weight: 200; }
 
 a.tooltipLink {
-  color: lightcoral;
-  -webkit-text-stroke: 1px white;
+  color: #9cdcff;
+  font-size: 120%;
   position: relative; }
 
 .contentItem {
