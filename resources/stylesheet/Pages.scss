@@ -18,18 +18,18 @@
 }
 
 @mixin bevel($width) {
-  box-shadow:  0 $width $width*2 #fff, /*bottom external highlight*/
+  box-shadow: 0 $width $width*2 #fff, /*bottom external highlight*/
   0 -$width $width #666, /*top external shadow*/
-  inset 0 -$width $width rgba(0,0,0,0.5), /*bottom internal shadow*/
-  inset 0 $width $width rgba(255,255,255,0.8); /*top internal highlight*/
+  inset 0 -$width $width rgba(0, 0, 0, 0.5), /*bottom internal shadow*/
+  inset 0 $width $width rgba(255, 255, 255, 0.8); /*top internal highlight*/
 }
 
 body {
   font-family: Prime, sans-serif;
   background-image: url("../images/PageBackground.png");
   background-color: black;
-  background-repeat: repeat;
-  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   text-align: center;
   color: white;
 
@@ -48,10 +48,11 @@ h1 {
   padding: 0 20px;
   cursor: default;
 }
+
 .grid-container {
   padding: 20px 0;
   display: grid;
-  grid-template-columns: repeat(4,1fr); // 4 columns, equal width
+  grid-template-columns: repeat(4, 1fr); // 4 columns, equal width
   grid-gap: 10px;
   grid-template-rows: 100px 100px; // 2 rows, equal height
   //grid-auto-rows: minmax(100px, auto);
@@ -61,8 +62,9 @@ h1 {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  overflow:hidden;
+  overflow: hidden;
 }
+
 .arrow {
   width: 0;
   height: 0;
@@ -71,16 +73,18 @@ h1 {
   border-color: #ffffff transparent transparent transparent;
   grid-row: 1;
 }
+
 .cover {
   position: absolute;
   z-index: 100;
   background-color: white;
   opacity: 0.75;
-//@include bevel(5px);
+  //@include bevel(5px);
   box-shadow: 0 0 15px 15px white;
   cursor: pointer;
   //border: thick white solid
 }
+
 .button {
   @include noselect;
   color: black;

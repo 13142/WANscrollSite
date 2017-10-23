@@ -10,8 +10,8 @@ body {
   font-family: Prime, sans-serif;
   background-image: url("../images/PageBackground.png");
   background-color: black;
-  background-repeat: repeat;
-  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   text-align: center;
   color: white; }
 
@@ -78,4 +78,4 @@ h1 {
   grid-row: 2;
   border-radius: 2px; }
 
-/*# sourceMappingURL=Page3.css.map */
+/*# sourceMappingURL=Pages.css.map */

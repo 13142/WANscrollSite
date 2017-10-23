@@ -2,18 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page Number 4</title>
-    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <link rel="stylesheet" href="../resources/scripts/Pages.css">
+    <title>Router Configuration</title>
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0"/>
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <link rel="stylesheet" href="../resources/stylesheet/Pages.css">
+    <link rel="stylesheet" href="LANPageStyle.css">
     <script src="../resources/scripts/jquery-3.2.1.js"></script>
 
 </head>
 <body>
-<h1>Page Number 4</h1>
+<h1>Configuring Your Router:</h1>
+<div class="content-grid">
+    <div> To configure your router, first get onto the login page (google your model number to find the default ip address, or type ipconfig into your console and find the default
+        gateway entry ), the most common addresses are 192.168.0.1, 192.168.1.254, 192.168.1.1...etc.
+    </div>
+    <img src="images/image5.png" alt="Powershell ipconfig" class="floater">
+    <div> Once on the login page, the consult google for the default username and password for your route.
+        Common username and passwords could be:
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+            <tr>
+                <td>admin</td>
+                <td>admin</td>
+            </tr>
+            <tr>
+                <td>admin</td>
+                <td>password</td>
+            </tr>
+            <tr>
+                <td>admin</td>
+                <td>default</td>
+            </tr>
+            <tr>
+                <td>default</td>
+                <td>default</td>
+            </tr>
+        </table>
+    </div>
+    <img src="images/image4.png" alt="Login screen" class="floater">
+    <img src="images/image1.png" alt="account management" class="floater">
+    <div> Once logged in, the first thing you want to do is to change the default password to something more secure, to do this consult google again, in my case it is under the
+        Maintain → Account Management → Modify Login Password.
+    </div>
+
+    <img src="images/image2.png" alt="Port Mapping" class="floater">
+    <div> A common router setting to config would be the port forwarding settings, which for my router is under Internet → Forwarding → Port mapping, yours might differ. For my
+        router the port mapping, specific MAC addresses are used for directing traffic, although another router might use private ip addresses.
+    </div>
+    <div> You can secure your wireless internet by either setting a password, or by allowing or blocking specific devices by mac address.
+    </div>
+    <img src="images/image6.png" alt="Wifi MAC address blocking" class="floater">
+    <img src="images/image8.png" alt="Wifi Password setting" class="floater">
+    <div></div>
+    <div>The router can also list individual devices that ever connected to the router:
+    </div>
+    <img src="images/image7.png" alt="Port Mapping" class="floater">
+</div>
 <div class="cover"></div>
 <div class="grid-container">
     <div class="arrow prime" style="grid-column: 1"></div>
@@ -23,7 +73,7 @@
     <div class="button" data-target="5" style="grid-column: 1">Click Here To <br> Go To <span class="pageLbl">Main Page</span></div>
     <div class="button" data-target="1" style="grid-column: 2">Click Here To <br> Go To <span class="pageLbl">Page 1</span></div>
     <div class="button" data-target="2" style="grid-column: 3">Click Here To <br> Go To <span class="pageLbl">Page 2</span></div>
-    <div class="button" data-target="3"  style="grid-column: 4">Click Here To <br> Go To <span class="pageLbl">Page 3</span></div>
+    <div class="button" data-target="3" style="grid-column: 4">Click Here To <br> Go To <span class="pageLbl">Page 3</span></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="../resources/scripts/Pages.js"></script>

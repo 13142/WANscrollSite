@@ -54,7 +54,8 @@ for (var i = 0; i < slides.length; i++) {
             toDoLine.from(innerSlides[ii], 0.5, { autoAlpha: 0, ease: Power2.easeOut, y: $(window).height() }, 0);
             var heightToAdd = innerSlides.eq(ii).height();
             if (heightToAdd > maxHeight) {
-                throw "Inner item bigger than container";
+                heightToAdd = maxHeight - 1;
+                //throw "Inner item bigger than container";
             }
             aggregrateHeight += heightToAdd;
             while (aggregrateHeight > maxHeight) {
