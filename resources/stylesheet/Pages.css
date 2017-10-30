@@ -1,11 +1,13 @@
 @font-face {
   font-family: "Prime";
   font-weight: normal;
-  src: url("../fonts/Prime Regular.otf"); }
+  src: url("../fonts/Prime Regular.otf");
+}
 @font-face {
   font-family: "Prime";
   font-weight: 200;
-  src: url("../fonts/Prime Light.otf"); }
+  src: url("../fonts/Prime Light.otf");
+}
 body {
   font-family: Prime, sans-serif;
   background-image: url("../images/PageBackground.png");
@@ -13,7 +15,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   text-align: center;
-  color: white; }
+  color: white;
+}
 
 h1 {
   margin-top: 8%;
@@ -29,7 +32,8 @@ h1 {
   -ms-user-select: none;
   user-select: none;
   padding: 0 20px;
-  cursor: default; }
+  cursor: default;
+}
 
 .grid-container {
   padding: 20px 0;
@@ -43,7 +47,8 @@ h1 {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .arrow {
   width: 0;
@@ -51,7 +56,8 @@ h1 {
   border-style: solid;
   border-width: 25px 12.5px 0 12.5px;
   border-color: #ffffff transparent transparent transparent;
-  grid-row: 1; }
+  grid-row: 1;
+}
 
 .cover {
   position: absolute;
@@ -59,7 +65,8 @@ h1 {
   background-color: white;
   opacity: 0.75;
   box-shadow: 0 0 15px 15px white;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .button {
   -webkit-user-select: none;
@@ -69,13 +76,14 @@ h1 {
   color: black;
   text-align: center;
   background-color: white;
-  display: block;
+  display: flex;
   cursor: pointer;
   width: 125px;
-  height: 50px;
+  height: 60px;
   padding: 0 5px;
   padding-top: 10px;
   grid-row: 2;
-  border-radius: 2px; }
-
-/*# sourceMappingURL=Pages.css.map */
+  border-radius: 2px;
+  flex-direction: column;
+  justify-content: center;
+}
